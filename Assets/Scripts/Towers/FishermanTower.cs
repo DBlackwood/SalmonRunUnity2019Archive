@@ -10,6 +10,10 @@ public class FishermanTower : TowerBase
     public Material missLineMaterial;
     public Material flashMaterial;
 
+    // rate of success of a fish catch attempt
+    [Range(0f, 1f)]
+    public float catchRate;
+
     // how many times the fish will flash in and out to show it is being caught
     public int numFlashesPerCatch;
 
@@ -131,7 +135,7 @@ public class FishermanTower : TowerBase
     private IEnumerator TryCatchFishCoroutine(Fish fish)
     {
         // figure out whether the fish will be caught or not
-        bool caught = Random.Range(0f, 1f) >= 0.75f;
+        bool caught = Random.Range(0f, 1f) <= catchRate;
 
         // do setup for catch attempt line visualizer
         catchAttemptFish = fish;

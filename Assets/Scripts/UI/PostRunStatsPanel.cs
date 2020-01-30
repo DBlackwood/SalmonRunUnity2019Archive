@@ -39,7 +39,7 @@ public class PostRunStatsPanel : MonoBehaviour
         GameEvents.onEndRun.AddListener(Activate);
 
         // set inactive by default
-        Deactivate();
+        gameObject.SetActive(false);
     }
 
     /**
@@ -55,7 +55,7 @@ public class PostRunStatsPanel : MonoBehaviour
      */
     public void Deactivate()
     {
-        GameManager.Instance.ToPlace();
+        GameManager.Instance.SetState(new PlaceState());
         gameObject.SetActive(false);
     }
 

@@ -7,17 +7,8 @@ using UnityEngine.Events;
  * Script that controls the overall game flow.
  */
 [RequireComponent(typeof(TimeManager))]
-public class GameManager : MonoBehaviour
+public partial class GameManager : MonoBehaviour
 {
-    // states that the game can be in
-    public enum GameState
-    {
-        Intro,
-        Place,
-        Run,
-        PostRun
-    }
-
     // singleton instance of the manager
     public static GameManager Instance { get; private set; }
 
@@ -37,11 +28,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // current state of the game
+    private GameState currentState;
+
     // fish school in the game
     public FishSchool school;
-
-    // state the game is currently in
-    private GameState gameState;
 
     // time manager script
     private TimeManager timeManager;
@@ -74,9 +65,47 @@ public class GameManager : MonoBehaviour
         timeManager = GetComponent<TimeManager>();
 
         // set to initial state
-        gameState = GameState.Intro;
         Turn = 1;
         timeManager.Pause();
+    }
+
+    /**
+     * Called each frame update
+     */
+    private void Update()
+    {
+        // do any update-level operations required in the current state
+        if (currentState != null)
+        {
+            currentState.UpdateState();
+        }
+    }
+
+    #endregion
+
+    #region State Management
+
+    /**
+     * Change from one state to another
+     */
+    public void SetState(GameState newState)
+    {
+        // if there is a previous state, exit it properly
+        if (currentState != null)
+        {
+            currentState.ExitState();
+        }
+
+        // hold on to old state
+        GameState oldState = currentState;
+
+        // update the state
+        currentState = newState;
+
+        // enter the new state
+        currentState.Enter(oldState);
+
+        Debug.Log(" -> " +  currentState.GetType().Name);
     }
 
     #endregion
@@ -88,11 +117,11 @@ public class GameManager : MonoBehaviour
      */
     public void StartButton()
     {
-        switch(gameState)
+        // only does anything if we're at the very beginning
+        // if so, enter the place state
+        if (currentState == null)
         {
-            case GameState.Intro:
-                ToPlace();
-                break;
+            SetState(new PlaceState());
         }
     }
 
@@ -101,8 +130,12 @@ public class GameManager : MonoBehaviour
      */
     public void PauseButton()
     {
-        // pause the game
-        timeManager.Pause();
+        // can only pause during the run itself
+        if (currentState.GetType() == typeof(RunState))
+        {
+            // pause the game
+            timeManager.Pause();
+        }
     }
 
     /**
@@ -110,26 +143,34 @@ public class GameManager : MonoBehaviour
      */
     public void PlayButton()
     {
-        switch(gameState)
+        // what the play button shoud do is based on what the current state is
+        switch(currentState.GetType().Name)
         {
-            case GameState.Intro:
+            case nameof(PlaceState):
+                SetState(new RunState());
                 break;
-            case GameState.Place:
-                ToRun();
-                break;
-            case GameState.Run:
+            case nameof(RunState):
             default:
-                timeManager.NormalTime();
+                NormalSpeed();
                 break;
         }
     }
 
     /**
+     * Put game at normal speed
+     */
+    public void NormalSpeed()
+    {
+        timeManager.NormalTime();
+    }
+
+    /**
      * Put game into faster speed
      */
-    public void FasterButton()
+    public void FasterSpeed()
     {
-        if (gameState != GameState.Place)
+        // only make diff speed available during the run
+        if (currentState.GetType() == typeof(RunState))
         {
             timeManager.FasterTime();
         }
@@ -138,62 +179,14 @@ public class GameManager : MonoBehaviour
     /**
      * Put game into fastest speed
      */
-    public void FastestButton()
+    public void FastestSpeed()
     {
-        if (gameState != GameState.Place)
+        // only make diff speed available during the run
+        if (currentState.GetType() == typeof(RunState))
         {
             timeManager.FastestTime();
         }
     }
 
     #endregion
-
-    /**
-     * Move to the Place state
-     */
-    public void ToPlace()
-    {
-        // hold the old state
-        GameState prevGameState = gameState;
-
-        // switch to the new state
-        gameState = GameState.Place;
-        
-
-    }
-
-    /**
-     * Move to the Run state
-     */
-    private void ToRun()
-    {
-        // hold the previous state
-        GameState prevGameState = gameState;
-
-        // update the state
-        gameState = GameState.Run;
-
-        GameEvents.onStartRun.Invoke();
-        PlayButton();
-    }
-
-    /**
-     * Move to the PostRun state
-     */
-    public void ToPostRun()
-    {
-        // hold the old state
-        GameState prevGameState = gameState;
-
-        // switch to the new state
-        gameState = GameState.PostRun;
-
-        // if we were previously in the run state, add a turn
-        if (prevGameState == GameState.Run)
-        {
-            GameEvents.onEndRun.Invoke();
-            Turn++;
-        }
-    }
-
 }

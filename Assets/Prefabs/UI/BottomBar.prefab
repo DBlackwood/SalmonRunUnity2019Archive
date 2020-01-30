@@ -2034,7 +2034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb3cc5a3eb5d194bb58e4cf412a9062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 529977137323653590, guid: beab26a23a65e384cbd9689faf0d2293,
+  objectToSpawn: {fileID: 4806294813277515804, guid: 1dfa5a0554de9934897251c77f28a536,
     type: 3}
 --- !u!1 &5449597172318810139
 GameObject:
@@ -2555,7 +2555,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5449597173160474746
 RectTransform:
   m_ObjectHideFlags: 0

@@ -170,7 +170,7 @@ public class FishSchool : MonoBehaviour, IPausable {
     {
         if (fishList.Count <= 0)
         {
-            GameManager.Instance.ToPostRun();
+            GameManager.Instance.SetState(new RunStatsState());
         }
     }
 

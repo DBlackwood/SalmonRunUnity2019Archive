@@ -50,8 +50,7 @@ public class WaterGridInspector : Editor
             if (controller.WaterTileAt(index2D.x, index2D.y))
             {
                 Vector2 viewportPoint = Camera.current.WorldToViewportPoint(controller.GetCellCenterWorld(index2D.x, index2D.y));
-                if (true) 
-                //if (Mathf.Abs(viewportPoint.x) < 1 && Mathf.Abs(viewportPoint.y) < 1)
+                if (Mathf.Abs(viewportPoint.x) < 1 && Mathf.Abs(viewportPoint.y) < 1)
                 {
                     // begin checking for changes in handle movement
                     // this is standard Unity code for using custom handles
