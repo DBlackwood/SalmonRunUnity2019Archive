@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - EndOfLevel
   layers:
   - Default
   - TransparentFX
@@ -13,10 +14,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Fish
+  - Terrain
+  - Floor
+  - PlacedObjects
   - 
   - 
   - 
@@ -40,4 +41,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 1518845743
+    locked: 0
+  - name: Middle Ground
+    uniqueID: 3996761751
+    locked: 0
+  - name: ForeGround
+    uniqueID: 2086598843
     locked: 0
