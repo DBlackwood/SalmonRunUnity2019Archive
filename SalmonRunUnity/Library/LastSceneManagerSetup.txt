@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/_Scenes/MapV2/DemoLevel.unity
-  isLoaded: 1
-  isActive: 1

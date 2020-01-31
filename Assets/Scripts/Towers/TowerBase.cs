@@ -12,7 +12,10 @@ public abstract class TowerBase: MonoBehaviour, IDragAndDropObject, IPausable
     [SerializeField]
     protected int effectRadius;
 
-    // whether the tower is turned on or not
+    // whether the tower is currently activated or not
+    public bool TowerActive { get; set; } = false;
+
+    // whether the tower is paused or not
     protected bool paused = true;
 
     // time between each application of tower effects
@@ -39,6 +42,19 @@ public abstract class TowerBase: MonoBehaviour, IDragAndDropObject, IPausable
     protected virtual void Start()
     {
         StartCoroutine(StartTowerEffectLoop());
+    }
+
+    /**
+     * Handle mouse over
+     */
+    private void OnMouseOver()
+    {
+        // check for RMB
+        if (Input.GetMouseButtonDown(1))
+        {
+            // if RMB down, delete the tower from the root
+            Destroy(transform.root.gameObject);
+        }
     }
 
     #endregion
@@ -68,7 +84,7 @@ public abstract class TowerBase: MonoBehaviour, IDragAndDropObject, IPausable
         while (isActiveAndEnabled)
         {
             yield return new WaitForSeconds(timePerApplyEffect);
-            if (!paused)
+            if (TowerActive && !paused)
             {
                 ApplyTowerEffect();
             }
@@ -94,8 +110,6 @@ public abstract class TowerBase: MonoBehaviour, IDragAndDropObject, IPausable
     {
         paused = false;
     }
-
-
 
     #endregion
 
@@ -148,6 +162,8 @@ public abstract class TowerBase: MonoBehaviour, IDragAndDropObject, IPausable
         PlaceTower(primaryHitInfo, secondaryHitInfo);
 
         rangeEffect.UpdateEffect(TowerRangeEffect.EffectState.Off);
+
+        TowerActive = true;
     }
 
     /**

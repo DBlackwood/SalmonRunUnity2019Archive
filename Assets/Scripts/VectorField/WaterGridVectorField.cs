@@ -114,7 +114,7 @@ public class WaterGridVectorField : ScriptableObject {
             // if the file does not exist, reset the vector field based on the tilemap
             ResetVectorField(tilemap);
         }
-#elif UNITY_STANDALONE
+#elif UNITY_STANDALONE || UNITY_WEBGL
         TextAsset textAsset = (TextAsset)Resources.Load("VectorField/" + this.name, typeof(TextAsset));
 
         // make a temporary object to take in the data from the file

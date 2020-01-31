@@ -11,8 +11,11 @@ public class HorizontalBarGraph : MonoBehaviour
     // rect tranfsorm array for bars/images representing the category being displayed on the left, center, and right of the graph
     public RectTransform[] bars;
 
+    // strings for what each bar means
+    public string[] barTitles;
+
     // Text to display the numeric value of each bar
-    public Text[] numericDisplays;
+    public Text[] barTextObjects;
 
     // how wide the entirety of the graph is
     private float graphWidth;
@@ -23,9 +26,15 @@ public class HorizontalBarGraph : MonoBehaviour
     private void Awake()
     {
         // make sure we have minimum number of bars
-        if (bars.Length < 2 || numericDisplays.Length < 2)
+        if (bars.Length < 2 || barTextObjects.Length < 2 || barTitles.Length < 2)
         {
-            throw new System.Exception("Less than two bars or numeric displays assigned to a horiz bar graph!");
+            throw new System.Exception("Less than two bars or numeric displays or bar titles assigned to a horiz bar graph!");
+        }
+
+        // make sure number of bars, bar titles, and bar text objects match
+        else if (bars.Length != barTitles.Length || bars.Length != barTextObjects.Length || barTitles.Length != barTextObjects.Length)
+        {
+            throw new System.Exception("Lengths of arrays for horiz bar graph do not match!");
         }
 
         // the graph width is taken from how wide the rightmost bar/image is in the scene
@@ -84,7 +93,7 @@ public class HorizontalBarGraph : MonoBehaviour
             previousSum = currentSum;
 
             // also update the numeric display text
-            numericDisplays[i].text = allValues[i].ToString();
+            barTextObjects[i].text = barTitles[i] + "\n(" + allValues[i].ToString() + ")";
         }
     }
 }

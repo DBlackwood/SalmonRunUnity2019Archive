@@ -188,7 +188,7 @@ public class FishGenomeUtilities : MonoBehaviour
         return genomeList.Where((fish) => {
             FishGenePair sizeGenePair = fish[FishGenome.GeneType.Size];
 
-            return sizeGenePair.momGene == FishGenome.b && sizeGenePair.dadGene == FishGenome.B;
+            return sizeGenePair.momGene == FishGenome.B && sizeGenePair.dadGene == FishGenome.B;
         }).ToList();
     }
 }

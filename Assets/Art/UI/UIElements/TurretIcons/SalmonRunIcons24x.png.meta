@@ -2,18 +2,18 @@ fileFormatVersion: 2
 guid: 6f57f1ba736d0c743aac04c20e679348
 TextureImporter:
   fileIDToRecycleName:
-    21300000: SalmonRunIcons24x_0
-    21300002: SalmonRunIcons24x_1
-    21300004: SalmonRunIcons24x_2
-    21300006: SalmonRunIcons24x_3
-    21300008: SalmonRunIcons24x_4
-    21300010: SalmonRunIcons24x_5
-    21300012: SalmonRunIcons24x_6
-    21300014: SalmonRunIcons24x_7
-    21300016: SalmonRunIcons24x_8
-    21300018: SalmonRunIcons24x_9
+    21300000: SRGUI_Salmon1
+    21300002: SRGUI_ParkRanger
+    21300004: SRGUI_Tunnel
+    21300006: SRGUI_Campsite
+    21300008: SRGUI_Sealion
+    21300010: SRGUI_Dam2
+    21300012: SRGUI_SalmonLadder
+    21300014: SRGUI_Salmon2
+    21300016: SRGUI_Fisher
+    21300018: SRGUI_Transport
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 9
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -127,7 +127,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SalmonRunIcons24x_0
+      name: SRGUI_Salmon1
       rect:
         serializedVersion: 2
         x: 0
@@ -135,7 +135,7 @@ TextureImporter:
         width: 363
         height: 364
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,7 +147,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SalmonRunIcons24x_1
+      name: SRGUI_ParkRanger
       rect:
         serializedVersion: 2
         x: 388
@@ -155,7 +155,7 @@ TextureImporter:
         width: 368
         height: 367
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -167,15 +167,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SalmonRunIcons24x_2
+      name: SRGUI_Tunnel
       rect:
         serializedVersion: 2
-        x: 777
-        y: 381
+        x: 776
+        y: 380
         width: 368
         height: 367
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -187,7 +187,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SalmonRunIcons24x_3
+      name: SRGUI_Campsite
       rect:
         serializedVersion: 2
         x: 1166
@@ -195,7 +195,7 @@ TextureImporter:
         width: 368
         height: 367
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -207,7 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SalmonRunIcons24x_4
+      name: SRGUI_Sealion
       rect:
         serializedVersion: 2
         x: 1556
@@ -215,7 +215,7 @@ TextureImporter:
         width: 366
         height: 367
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -227,7 +227,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SalmonRunIcons24x_5
+      name: SRGUI_Dam2
       rect:
         serializedVersion: 2
         x: 0
@@ -235,7 +235,7 @@ TextureImporter:
         width: 366
         height: 367
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -247,7 +247,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SalmonRunIcons24x_6
+      name: SRGUI_SalmonLadder
       rect:
         serializedVersion: 2
         x: 389
@@ -255,7 +255,7 @@ TextureImporter:
         width: 367
         height: 367
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -267,7 +267,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SalmonRunIcons24x_7
+      name: SRGUI_Salmon2
       rect:
         serializedVersion: 2
         x: 777
@@ -275,7 +275,7 @@ TextureImporter:
         width: 368
         height: 367
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -287,7 +287,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SalmonRunIcons24x_8
+      name: SRGUI_Fisher
       rect:
         serializedVersion: 2
         x: 1166
@@ -295,7 +295,7 @@ TextureImporter:
         width: 368
         height: 367
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -307,15 +307,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SalmonRunIcons24x_9
+      name: SRGUI_Transport
       rect:
         serializedVersion: 2
-        x: 1558
-        y: 1
-        width: 364
-        height: 364
+        x: 1555
+        y: 0
+        width: 367
+        height: 367
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
