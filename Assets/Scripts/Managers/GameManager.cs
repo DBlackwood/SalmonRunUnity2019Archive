@@ -175,21 +175,16 @@ public partial class GameManager : MonoBehaviour
     public void PlayButton()
     {
         // what the play button shoud do is based on what the current state is
-        // but first, make sure there is a current state
-        if (currentState != null)
+        switch(currentState.GetType().Name)
         {
-            switch (currentState.GetType().Name)
-            {
-                case nameof(PlaceState):
-                    SetState(new RunState());
-                    break;
-                case nameof(RunState):
-                default:
-                    NormalSpeed();
-                    break;
-            }
+            case nameof(PlaceState):
+                SetState(new RunState());
+                break;
+            case nameof(RunState):
+            default:
+                NormalSpeed();
+                break;
         }
-        
     }
 
     /**

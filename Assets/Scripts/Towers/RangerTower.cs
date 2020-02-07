@@ -24,9 +24,6 @@ public class RangerTower : TowerBase
     // material for making an angler flash to show it is being affected
     public Material flashMaterial;
 
-    // prefab for line renderer
-    public GameObject lineRendererPrefab;
-
     // float representing how much of an effect the ranger should have if it regulates an angler in slowdown mode for small fish
     [Range(-1f, 1f)]
     public float slowdownEffectSmall;
@@ -42,19 +39,15 @@ public class RangerTower : TowerBase
     // float representing how likely the ranger is to successfully regulate an angler
     [Range(0f, 1f)]
     public float regulationSuccessRate;
-    // initialized in Unity
-    // Project -> Assets -> Prefabs -> Towers -> RangerTower
-    //   then look at Hierarchy
-    // Hierarchy -> RangerTower -> TokenBase
 
     // how many times the fish will flash in and out to show it is being caught
     public int numFlashesPerCatch;
 
-    // list of linerenderers used to show effects
-    private List<LineRenderer> towerEffectLineRenderers = new List<LineRenderer>();
+    // fisherman tower that the catch attempt line is pointing at
+    private FishermanTower catchAttemptFish;
 
-    // list of linerenderer pos
-    private List<Vector3> towerEffectPositions = new List<Vector3>();
+    // LineRenderer component used to display a catch or catch attempt
+    private LineRenderer regulateAttemptLine;
 
     /**
      * Start is called before the first frame update
@@ -62,6 +55,9 @@ public class RangerTower : TowerBase
     protected override void Start()
     {
         base.Start();
+
+        regulateAttemptLine = GetComponent<LineRenderer>();
+        regulateAttemptLine.enabled = false;
     }
 
     /**
@@ -69,8 +65,11 @@ public class RangerTower : TowerBase
      */
     void Update()
     {
-        // update fishermen line positions
-        SetLinePositions();
+        // update fish line position
+        if (regulateAttemptLine.enabled)
+        {
+            SetLinePos();
+        }
     }
 
     /**
@@ -83,10 +82,11 @@ public class RangerTower : TowerBase
                 return collider.GetComponentInChildren<FishermanTower>() != null && collider.GetComponentInChildren<FishermanTower>().TowerActive;
             }).ToArray();
 
-        
-        foreach (Collider fishermanCollider in fishermenColliders)
+        if (fishermenColliders.Length > 0)
         {
-            FishermanTower fishermanTower = fishermanCollider.GetComponent<FishermanTower>();
+            FishermanTower fishermanTower = fishermenColliders[Random.Range(0, fishermenColliders.Length)].GetComponent<FishermanTower>();
+
+            transform.parent.LookAt(fishermanTower.transform, Vector3.back);
 
             RegulateFisherman(fishermanTower);
         }
@@ -145,17 +145,13 @@ public class RangerTower : TowerBase
         // figure out whether the fisherman will be stopped or not
         bool caught = Random.Range(0f, 1f) <= regulationSuccessRate;
 
-        GameObject g = Instantiate(lineRendererPrefab, transform);
-        LineRenderer lr = g.GetComponent<LineRenderer>();
+        // do setup for regulation attempt line visualizer
+        catchAttemptFish = fishermanTower;
 
-        lr.material = caught ? hitLineMaterial : missLineMaterial;
+        Destroy(regulateAttemptLine.material);
+        regulateAttemptLine.material = caught ? hitLineMaterial : missLineMaterial;
 
-        lr.enabled = true;
-
-        towerEffectLineRenderers.Add(lr);
-
-        Vector3 towerEffectPosition = fishermanTower.transform.position;
-        towerEffectPositions.Add(towerEffectPosition);
+        regulateAttemptLine.enabled = true;
 
         // handle fish being caught
         if (caught)
@@ -173,27 +169,16 @@ public class RangerTower : TowerBase
                     // make the fisherman flash for a bit
                     for (int i = 0; i < numFlashesPerCatch; i++)
                     {
-                        Material oldMaterial = null;
-                        if (fishermanTowerRenderer != null)
-                        {
-                             oldMaterial = fishermanTowerRenderer.material;
-                            fishermanTowerRenderer.material = flashMaterial;
-                        }
+                        Material oldMaterial = fishermanTowerRenderer.material;
+                        fishermanTowerRenderer.material = flashMaterial;
                         yield return new WaitForSeconds((float)timePerApplyEffect / numFlashesPerCatch / 2f);
-
-                        if (fishermanTowerRenderer != null)
-                        {
-                            Destroy(fishermanTowerRenderer.material);
-                            fishermanTowerRenderer.material = oldMaterial;
-                        }
+                        Destroy(fishermanTowerRenderer.material);
+                        fishermanTowerRenderer.material = oldMaterial;
                         yield return new WaitForSeconds((float)timePerApplyEffect / numFlashesPerCatch / 2f);
                     }
 
                     // remove the fisherman tower
-                    if (fishermanTower != null)
-                    {
-                        Destroy(fishermanTower.transform.root.gameObject);
-                    }
+                    Destroy(fishermanTower.transform.root.gameObject);
                     break;
                 case Mode.Slowdown:
                     // apply the affect to the angler
@@ -202,18 +187,11 @@ public class RangerTower : TowerBase
                     // make the fisherman flash  for a bit
                     for (int i = 0; i < numFlashesPerCatch; i++)
                     {
-                        Material oldMaterial = null;
-                        if (fishermanTowerRenderer != null)
-                        {
-                            oldMaterial = fishermanTowerRenderer.material;
-                            fishermanTowerRenderer.material = flashMaterial;
-                        }
+                        Material oldMaterial = fishermanTowerRenderer.material;
+                        fishermanTowerRenderer.material = flashMaterial;
                         yield return new WaitForSeconds((float)timePerApplyEffect / numFlashesPerCatch / 2f);
-                        if (fishermanTowerRenderer != null)
-                        {
-                            Destroy(fishermanTowerRenderer.material);
-                            fishermanTowerRenderer.material = oldMaterial;
-                        }
+                        Destroy(fishermanTowerRenderer.material);
+                        fishermanTowerRenderer.material = oldMaterial;
                         yield return new WaitForSeconds((float)timePerApplyEffect / numFlashesPerCatch / 2f);
                     }
                     break;
@@ -226,25 +204,18 @@ public class RangerTower : TowerBase
         }
 
         // end the catch attempt line
-        towerEffectPositions.Remove(towerEffectPosition);
-        towerEffectLineRenderers.Remove(lr);
-        Destroy(g);
-        
+        regulateAttemptLine.enabled = false;
     }
 
     /**
      * Set line position for a fisherman we are targeting
      */
-    private void SetLinePositions()
+    private void SetLinePos()
     {
         Vector3 startPos = new Vector3(transform.position.x, transform.position.y, transform.position.z - 40);
+        Vector3 fishPos = catchAttemptFish.transform.position;
+        fishPos.z = startPos.z;
 
-        for (int i = 0; i < towerEffectLineRenderers.Count; i++)
-        {
-            Vector3 endPos = towerEffectPositions[i];
-            endPos.z = startPos.z;
-
-            towerEffectLineRenderers[i].SetPositions(new Vector3[] { startPos, endPos });
-        }
+        regulateAttemptLine.SetPositions(new Vector3[] { startPos, fishPos });
     }
 }

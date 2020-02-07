@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7854d1f760478604d88a3c70b78f578c, type: 3}
   m_Name: FishPrefabConfig
   m_EditorClassIdentifier: 
-  smallFemale: {fileID: 8489547932875081956, guid: 1d92ec54a558adb44bf840e603617a9b,
+  smallFemale: {fileID: 739066295231490187, guid: ad6c9de5c41fd994385c55190cd7c5e7,
     type: 3}
-  mediumFemale: {fileID: 7183708760882537701, guid: c5e620c35ea54f44296c997b57530a0b,
+  mediumFemale: {fileID: 6435606103069746117, guid: 29328a08d891abf4f9b22e3da7916d42,
     type: 3}
-  largeFemale: {fileID: 5472292593619520541, guid: 8656d2af9ab8a08449eb24ad066ff0bf,
+  largeFemale: {fileID: 5180869882556775506, guid: dfcb7d84df9908a4e97b792f360810f6,
     type: 3}
-  smallMale: {fileID: 1565702066780044992, guid: fe78dfc78bd1b09468a93f0d9deeb60f,
+  smallMale: {fileID: 3694669607148698068, guid: 81c88c6afc33bbf45add791bd0ef4ccd,
     type: 3}
-  mediumMale: {fileID: 2570467533265043449, guid: 7e257da98679b594e9ff2687ef9e5da9,
+  mediumMale: {fileID: 3250574402184077436, guid: acd14d9e5fc494f4bbb51f25d39a57d7,
     type: 3}
-  largeMale: {fileID: 8703597801045833717, guid: c121e9453571e6a4689460171f24e060,
+  largeMale: {fileID: 7489468708687156160, guid: a4cdf1598efec4e42acc81230667be6e,
     type: 3}

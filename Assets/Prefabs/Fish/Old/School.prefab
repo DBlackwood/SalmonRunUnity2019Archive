@@ -43,14 +43,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d04d8d8a93c0434c962f27ed8db2d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefabConfig: {fileID: 11400000, guid: 4718c88f48769554c80b329371465e24, type: 2}
+  fishPrefab: {fileID: 2521339095502530139, guid: 225760f7053fa30459ed2f0904c8d3cb,
+    type: 3}
   controller: {fileID: 0}
   initialNumFish: 200
   minOffspring: 2
   maxOffspring: 5
-  spawnAreaWidth: 100
-  spawnAreaHeight: 1500
-  spawnZ: -15
+  spawnAreaWidth: 200
+  spawnAreaHeight: 1259
+  spawnZ: 0
   timeBetweenWaves: 0.5
   fishPerWave: 5
-  randomMovementMultiplier: 0.5
+  randomMovementMultiplier: 0.25

@@ -67,7 +67,7 @@ public class CameraController : MonoBehaviour {
             scroll = 0.1f;
         }
 
-        pos.z += scroll * zoomSpeed * Time.deltaTime * 100f / Time.timeScale;
+        pos.z += scroll * zoomSpeed * Time.deltaTime * 100f;
 
         // clamp zoom within boundaries
         pos.z = Mathf.Clamp(pos.z, zoomOutMaxPos, zoomInMaxPos);

@@ -10,9 +10,6 @@ public class Dam : FilterBase, IDragAndDropObject
     // default crossing rate for all fish
     [Range(0f, 1f)]
     public float defaultCrossingRate;
-    // initialized in Unity
-    // Project -> Assets -> Prefabs -> Filters -> Dam -> DamLadder
-    // (make sure to double click on Dam cube symbol. 
 
     // crossing rates for small, medium, and large fish
     private float smallCrossingRate;
