@@ -164,6 +164,19 @@ public class FishSchool : MonoBehaviour, IPausable {
     }
 
     /**
+     * Kill all fish that are not already dead or at a spawning ground
+     * 
+     * Primarily for purposes of preventing soft-lock of gameplay if a fish won't die
+     */
+    public void KillAllActive()
+    {
+        while (fishList.Count > 0)
+        {
+            fishList[0].Catch();
+        }
+    }
+
+    /**
      * Check if there are any more fish still trying to reach the goal -- if not, end the run
      */
     private void CheckForEndOfRun()
@@ -300,7 +313,7 @@ public class FishSchool : MonoBehaviour, IPausable {
     {
         // loop until we've spawned enough fish
         int spawnedCount = 0;
-        while (spawnedCount < genomes.Count)
+        while (spawnedCount < genomes.Count && GameManager.Instance.GetStateName() == nameof(RunState))
         {
             // only spawn when we're not paused
             if (!paused)

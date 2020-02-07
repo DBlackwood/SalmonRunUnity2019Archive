@@ -6,8 +6,14 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class FishermanTower : TowerBase
 {
+    // mesh renderer that will flash when the fisherman tower is affected by a ranger or another tower
+    public MeshRenderer flashRenderer;
+
+    // materials for line renderer that indicates whether a fish has been hit or missed
     public Material hitLineMaterial;
     public Material missLineMaterial;
+
+    // material that will 
     public Material flashMaterial;
 
     // rate of success of a fish catch attempt
@@ -101,8 +107,21 @@ public class FishermanTower : TowerBase
      */
     protected override void ApplyTowerEffect()
     {
-        Collider[] fishColliders = Physics.OverlapSphere(transform.position, GetEffectRadius(), LayerMask.GetMask(Layers.FISH_LAYER_NAME));
+        // get all fish that aren't already being caught
+        Collider[] fishColliders = Physics.OverlapSphere(transform.position, GetEffectRadius(), LayerMask.GetMask(Layers.FISH_LAYER_NAME))
+            .Where((fishCollider) => {
+                Fish f = fishCollider.GetComponent<Fish>();
 
+                // throw a warning if something on the fish layer doesn't have a Fish component
+                if (f == null)
+                {
+                    Debug.LogWarning("Something on the fish layer does not have a Fish component!");
+                }
+
+                return f != null && !f.beingCaught;
+            }).ToArray();
+
+        // select one of the fish
         if (fishColliders.Length > 0)
         {
             Fish f = fishColliders[Random.Range(0, fishColliders.Length)].GetComponent<Fish>();
@@ -115,7 +134,7 @@ public class FishermanTower : TowerBase
             }
             else
             {
-                Debug.LogError("Something on the fish layer does not have a Fish component!");
+                Debug.LogError("Error with selecting random fish to catch -- should not happen!");
             }
         }
         
@@ -148,6 +167,9 @@ public class FishermanTower : TowerBase
         // handle fish being caught
         if (caught)
         {
+            // tell the fish that it is being caught
+            fish.StartCatch();
+
             // make the fish flash  for a bit
             SkinnedMeshRenderer fishRenderer = fish.GetComponentInChildren<SkinnedMeshRenderer>();
             for (int i = 0; i < numFlashesPerCatch; i++)

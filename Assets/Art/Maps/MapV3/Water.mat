@@ -8,13 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Water
-  m_Shader: {fileID: 4800000, guid: f24809d953f26f64b9c352c89807da80, type: 3}
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 1
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: Transparent
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -118,7 +119,7 @@ Material:
     - _BorderColor: {r: 1, g: 1, b: 1, a: 1}
     - _BumpDirection: {r: 1, g: 1, b: -1, a: 1}
     - _BumpTiling: {r: 1, g: 1, b: -2, a: 3}
-    - _Color: {r: 0.07075471, g: 0.9125416, b: 1, a: 0.45490196}
+    - _Color: {r: 0.07075471, g: 0.9125416, b: 1, a: 0.37254903}
     - _DepthGradientDeep: {r: 0.25231397, g: 0.46026954, b: 0.8490566, a: 0.749}
     - _DepthGradientShallow: {r: 0.22459061, g: 0.78152514, b: 0.9716981, a: 0.725}
     - _DistTiling: {r: 50, g: 50, b: 50, a: 50}

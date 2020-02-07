@@ -108,6 +108,14 @@ public partial class GameManager : MonoBehaviour
         Debug.Log(" -> " +  currentState.GetType().Name);
     }
 
+    /**
+     * Get the current game state
+     */
+    public string GetStateName()
+    {
+        return currentState.GetType().Name;
+    }
+
     #endregion
 
     #region UI Functions
@@ -134,12 +142,12 @@ public partial class GameManager : MonoBehaviour
         if (currentState.GetType() == typeof(RunState))
         {
             // pause the game
-            timeManager.Pause();
+            Pause();
         }
     }
 
     /**
-     * Put the game into normal speed
+     * React to player pressing the "Play" button
      */
     public void PlayButton()
     {
@@ -154,6 +162,28 @@ public partial class GameManager : MonoBehaviour
                 NormalSpeed();
                 break;
         }
+    }
+
+    /**
+     * React to player pressing the "Stop" button
+     */
+    public void StopButton()
+    {
+        switch(currentState.GetType().Name)
+        {
+            case nameof(RunState):
+                // for now, this will skip to the run stats state (in case one of the fish gets stuck or something like that
+                school.KillAllActive();
+                break;
+        }
+    }
+
+    /**
+     * Pause the game
+     */
+    public void Pause()
+    {
+        timeManager.Pause();
     }
 
     /**

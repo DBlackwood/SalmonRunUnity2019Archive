@@ -1945,7 +1945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb3cc5a3eb5d194bb58e4cf412a9062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 976017277793165246, guid: 921868e4fa2c8cf4a8fa7856990be9a6,
+  objectToSpawn: {fileID: 2502241671651778950, guid: 921868e4fa2c8cf4a8fa7856990be9a6,
     type: 3}
 --- !u!1 &5449597172258116603
 GameObject:

@@ -52,7 +52,7 @@ public class RangerTower : TowerBase
     {
         Collider[] fishermenColliders = Physics.OverlapSphere(transform.position, GetEffectRadius(), LayerMask.GetMask(Layers.PLACED_OBJECTS))
             .Where((collider) => {
-                return collider.GetComponentInChildren<FishermanTower>() != null;
+                return collider.GetComponentInChildren<FishermanTower>() != null && collider.GetComponentInChildren<FishermanTower>().TowerActive;
             }).ToArray();
 
         if (fishermenColliders.Length > 0)
@@ -115,7 +115,7 @@ public class RangerTower : TowerBase
      */
     private IEnumerator RegulateFishermanCoroutine(FishermanTower fishermanTower)
     {
-        // figure out whether the fish will be caught or not
+        // figure out whether the fisherman will be stopped or not
         bool caught = Random.Range(0f, 1f) <= regulationSuccessRate;
 
         // do setup for regulation attempt line visualizer
@@ -129,8 +129,11 @@ public class RangerTower : TowerBase
         // handle fish being caught
         if (caught)
         {
+            // make the fisherman inactive
+            fishermanTower.TowerActive = false;
+
             // make the fisherman flash  for a bit
-            SkinnedMeshRenderer fishermanTowerRenderer = fishermanTower.transform.root.GetComponentInChildren<SkinnedMeshRenderer>();
+            MeshRenderer fishermanTowerRenderer = fishermanTower.flashRenderer;
             for (int i = 0; i < numFlashesPerCatch; i++)
             {
                 Material oldMaterial = fishermanTowerRenderer.material;
