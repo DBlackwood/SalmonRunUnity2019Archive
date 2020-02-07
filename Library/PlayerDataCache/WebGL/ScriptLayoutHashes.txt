@@ -1,8 +1,8 @@
 WebGL
 PlayerPath?
-/Users/dianeblackwood/_dev/SalmonRunFolder/UnityFolder_SR/SalmonRunUnity/SalmonRunWebGL02
+C:/Users/cousi/UnityGames/SalmonRunUnity (1)/Build/Web
 SceneListBegin?
-Assets/_Scenes/MapV1/NewMap.unity
+Assets/_Scenes/MapV2/DemoLevel.unity
 SceneListEnd?
 5c4935f16c3376132a917d443260dd5c Assembly-CSharp.dll:.BottomBarContentPage
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.PlacementVisualizationManager
@@ -123,7 +123,7 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 b071e3ed3a2e3d1c54b630fcfeca27ef Assembly-CSharp.dll:.DamPlacementLocation
-5ceafad6f5ef6d0f08c629464199e6aa Assembly-CSharp.dll:.HorizontalBarGraph
+205a89bde65439abc99a20b3bbe89a7d Assembly-CSharp.dll:.HorizontalBarGraph
 303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
 7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
 c9dce6ab96c6a0ce43c6e4dbdc8f7bb0 Assembly-CSharp.dll:.FishBrain
@@ -139,10 +139,11 @@ bc3df6527a78bf61523350eacf61ac4a Assembly-CSharp.dll:.TopBarController
 cf138383614c462c69341295e84d150c Assembly-CSharp.dll:.WaterTile
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
 fed8aefbeda3e7847a6b59a697378585 Assembly-CSharp.dll:.TowerRangeEffect
-7f1a1a2aa1f24cc7cc4d3441e53d9d36 Assembly-CSharp.dll:.FishSchool
+57ce008b0e0b83cf235a0b4538d42335 Assembly-CSharp.dll:.FishSchool
 6aaead808f305a7bed54e28131259432 Assembly-CSharp.dll:.Population
 de959ec6dad3d5709a5ad8474b0eaba8 Assembly-CSharp.dll:.BottomBarController
-de4f730887e4d6f2ff0c242c9fa8f230 Assembly-CSharp.dll:.BottomBarPopulationPage
+623ef7c3711bcac26a0140f6b6834274 Assembly-CSharp.dll:.RangerTower
+88bc6ef22d1043f0f4d85065483e8ec9 Assembly-CSharp.dll:.BottomBarPopulationPage
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 1dcb82730d983b77cec736c6ef19f814 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -189,8 +190,9 @@ d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.DebugReload
 3165968ba45c74472d279ba04455fccb Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
-7fdf737d336b95b8697c999dafeccf20 Assembly-CSharp.dll:.FishermanTower
+f9295987152a123449ad45a4a811780b Assembly-CSharp.dll:.FishermanTower
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Floor
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Dam
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 fc6d5fd7756d03990c0b316f018c0e0b Assembly-CSharp.dll:.StatsPanelManager
+4357b48c9fae60348b5bc4828168e51f Assembly-CSharp.dll:.PostRunStatsPanel

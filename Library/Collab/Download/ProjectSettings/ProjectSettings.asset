@@ -503,7 +503,7 @@ PlayerSettings:
   incrementalIl2cppBuild: {}
   allowUnsafeCode: 0
   additionalIl2CppArgs: 
-  scriptingRuntimeVersion: 1
+  scriptingRuntimeVersion: 0
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
@@ -589,7 +589,7 @@ PlayerSettings:
   facebookStatus: 1
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
-  apiCompatibilityLevel: 6
+  apiCompatibilityLevel: 2
   cloudProjectId: 199a2c19-e2b3-4cc3-b973-b1ada3de2d88
   framebufferDepthMemorylessMode: 0
   projectName: SalmonRunUnity

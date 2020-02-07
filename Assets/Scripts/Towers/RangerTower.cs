@@ -115,7 +115,7 @@ public class RangerTower : TowerBase
      */
     private IEnumerator RegulateFishermanCoroutine(FishermanTower fishermanTower)
     {
-        // figure out whether the fish will be caught or not
+        // figure out whether the fisherman will be stopped or not
         bool caught = Random.Range(0f, 1f) <= regulationSuccessRate;
 
         // do setup for regulation attempt line visualizer
