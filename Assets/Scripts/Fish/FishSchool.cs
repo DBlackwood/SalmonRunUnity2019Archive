@@ -7,8 +7,8 @@ using System.Linq;
 public class FishSchool : MonoBehaviour, IPausable {
 
     [Header("References")]
-    // fish prefab
-    public GameObject fishPrefab;
+    // fish prefab config gameobject
+    public FishPrefabConfig fishPrefabConfig;
 
     // controller through which vector field can be accessed
     public WaterGridController controller;
@@ -16,6 +16,8 @@ public class FishSchool : MonoBehaviour, IPausable {
     [Header("School Info")]
     // how big this school is
     public int initialNumFish;
+    // initialized in Unity - Assets -> _scenes -> MapV2 -> DemoLevel
+    // Hierarchy -> DemoLevel -> School
 
     // minimum and maximum number of children that a pair of salmon can generate during reproduction
     public int minOffspring;
@@ -265,7 +267,7 @@ public class FishSchool : MonoBehaviour, IPausable {
         // make variable for holding parent genomes
         List<FishGenome> parentGenomes = null;
 
-        // if it's the first turn, generate a full set of genomes from nothing
+        // if it's the 0th turn, generate a full set of genomes from nothing
         if (GameManager.Instance.Turn == 1)
         {
             nextGenerationGenomes = FishGenomeUtilities.MakeNewGeneration(initialNumFish, true, true);
@@ -327,7 +329,7 @@ public class FishSchool : MonoBehaviour, IPausable {
                     Vector3 spawnPos = new Vector3(Random.Range(topLeft.x, topRight.x), Random.Range(bottomLeft.y, topLeft.y), spawnZ);
 
                     // create the fish at the given position and tell it what school it belongs to
-                    fishList.Add(Instantiate(fishPrefab, spawnPos, Quaternion.identity).GetComponentInChildren<Fish>());
+                    fishList.Add(Instantiate(fishPrefabConfig.GetFishPrefab(genomes[fishList.Count]), spawnPos, Quaternion.identity).GetComponentInChildren<Fish>());
                     fishList[fishList.Count - 1].SetSchool(this);
                     fishList[fishList.Count - 1].SetGenome(genomes[fishList.Count - 1]);
 

@@ -31,6 +31,9 @@ public partial class GameManager : MonoBehaviour
     // current state of the game
     private GameState currentState;
 
+    // name of the previous game state
+    private GameState prevState;
+
     // fish school in the game
     public FishSchool school;
 
@@ -79,6 +82,18 @@ public partial class GameManager : MonoBehaviour
         {
             currentState.UpdateState();
         }
+
+        // check for keyboard input
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            switch (currentState.GetType().Name)
+            {
+                case nameof(RunState):
+                    // for now, this will skip to the run stats state (in case one of the fish gets stuck or something like that
+                    school.KillAllActive();
+                    break;
+            }
+        }     
     }
 
     #endregion
@@ -97,15 +112,23 @@ public partial class GameManager : MonoBehaviour
         }
 
         // hold on to old state
-        GameState oldState = currentState;
+        prevState = currentState;
 
         // update the state
         currentState = newState;
 
         // enter the new state
-        currentState.Enter(oldState);
+        currentState.Enter(prevState);
 
         Debug.Log(" -> " +  currentState.GetType().Name);
+    }
+
+    /**
+     * Go back to the previous state
+     */
+    public void RevertState()
+    {
+        SetState(prevState);
     }
 
     /**
@@ -129,7 +152,7 @@ public partial class GameManager : MonoBehaviour
         // if so, enter the place state
         if (currentState == null)
         {
-            SetState(new PlaceState());
+            SetState(new RunStatsState());
         }
     }
 
@@ -152,16 +175,21 @@ public partial class GameManager : MonoBehaviour
     public void PlayButton()
     {
         // what the play button shoud do is based on what the current state is
-        switch(currentState.GetType().Name)
+        // but first, make sure there is a current state
+        if (currentState != null)
         {
-            case nameof(PlaceState):
-                SetState(new RunState());
-                break;
-            case nameof(RunState):
-            default:
-                NormalSpeed();
-                break;
+            switch (currentState.GetType().Name)
+            {
+                case nameof(PlaceState):
+                    SetState(new RunState());
+                    break;
+                case nameof(RunState):
+                default:
+                    NormalSpeed();
+                    break;
+            }
         }
+        
     }
 
     /**
@@ -169,13 +197,7 @@ public partial class GameManager : MonoBehaviour
      */
     public void StopButton()
     {
-        switch(currentState.GetType().Name)
-        {
-            case nameof(RunState):
-                // for now, this will skip to the run stats state (in case one of the fish gets stuck or something like that
-                school.KillAllActive();
-                break;
-        }
+        SetState(new EndState(EndGame.Reason.ManualQuit));
     }
 
     /**

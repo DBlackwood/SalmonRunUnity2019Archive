@@ -16,12 +16,26 @@ public class FishermanTower : TowerBase
     // material that will 
     public Material flashMaterial;
 
-    // rate of success of a fish catch attempt
+    // default rate of success of a fish catch attempt
     [Range(0f, 1f)]
-    public float catchRate;
+    public float defaultCatchRate;
+    // initalized in Unity interface:
+    //Project -> Assets -> Prefabs -> Towers -> FishermanTower
+    // then look at Hierarchy
+    //Hierarchy -> FishermanTower -> TokenBase
 
     // how many times the fish will flash in and out to show it is being caught
     public int numFlashesPerCatch;
+
+    // default rate of success of fish catch attempt for small, medium and large fish
+    public float defaultSmallCatchRate = 0.01F;
+    public float defaultMediumCatchRate = 0.02F;
+    public float defaultLargeCatchRate = 0.90F;
+
+    // current rate of success of fish catch attempt for small, medium, and large fish
+    private float currentSmallCatchRate;
+    private float currentMediumCatchRate;
+    private float currentLargeCatchRate;
 
     // fish that have been caught by this fisherman
     private List<Fish> caughtFish;
@@ -37,7 +51,13 @@ public class FishermanTower : TowerBase
      */   
     protected override void Awake()
     {
+        // bas class awake
         base.Awake();
+
+        // set current catch rates
+        currentSmallCatchRate = defaultCatchRate * defaultSmallCatchRate;
+        currentMediumCatchRate = defaultCatchRate * defaultMediumCatchRate;
+        currentLargeCatchRate = defaultCatchRate * defaultLargeCatchRate;
     }
 
     /**
@@ -63,6 +83,19 @@ public class FishermanTower : TowerBase
         {
             SetLinePos();
         }
+    }
+
+    /**
+     * Affect the catch rate of a fish for a certain amount of time
+     * 
+     * @param smallEffect float The value that the current catch rate will be modified by for small fish
+     * @param mediumEffect float The value that the current catch rate will be modified by for medium fish
+     * @param largeEffect float The value that the current catch rate will be modified by for large fish
+     * @param length float The amount of time (in seconds) that the effect will last
+     */
+    public void AffectCatchRate(float smallEffect, float mediumEffect, float largeEffect, float length)
+    {
+        StartCoroutine(AffectCatchRateCoroutine(smallEffect, mediumEffect, largeEffect, length));
     }
 
     /**
@@ -153,6 +186,23 @@ public class FishermanTower : TowerBase
      */
     private IEnumerator TryCatchFishCoroutine(Fish fish)
     {
+        // how likely we are to catch fish is dependent on what size the fish is
+        // determine that now
+        float catchRate;
+        FishGenePair sizeGenePair = fish.GetGenome()[FishGenome.GeneType.Size];
+        if (sizeGenePair.momGene == FishGenome.b && sizeGenePair.dadGene == FishGenome.b)
+        {
+            catchRate = currentSmallCatchRate;
+        }
+        else if (sizeGenePair.momGene == FishGenome.B && sizeGenePair.dadGene == FishGenome.B)
+        {
+            catchRate = currentMediumCatchRate;
+        }
+        else
+        {
+            catchRate = currentLargeCatchRate;
+        }
+
         // figure out whether the fish will be caught or not
         bool caught = Random.Range(0f, 1f) <= catchRate;
 
@@ -197,11 +247,32 @@ public class FishermanTower : TowerBase
     }
 
     /**
+     * Coroutine for affecting the catch rate of the angler
+     * 
+     * @param smallEffect float The value that the catch rate will be modified by for small fish
+     * @param mediumEffect float The value that the catch rate will be modified by for medium fish
+     * @param largeEffect float The value that the catch rate will be modified by for large fish
+     * @param length float The amount of time (seconds) that the effect will last
+     */
+    private IEnumerator AffectCatchRateCoroutine(float smallEffect, float mediumEffect, float largeEffect, float length)
+    {
+        currentSmallCatchRate += smallEffect;
+        currentMediumCatchRate += mediumEffect;
+        currentLargeCatchRate += largeEffect;
+
+        yield return new WaitForSeconds(length);
+
+        currentSmallCatchRate -= smallEffect;
+        currentMediumCatchRate -= mediumEffect;
+        currentLargeCatchRate -= largeEffect;
+    }
+
+    /**
      * Set line position for a fish
      */
     private void SetLinePos()
     {
-        Vector3 startPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        Vector3 startPos = new Vector3(transform.position.x, transform.position.y, transform.position.z - 40);
         Vector3 fishPos = catchAttemptFish.transform.position;
         fishPos.z = startPos.z;
 

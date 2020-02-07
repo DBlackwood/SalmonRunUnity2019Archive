@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7854d1f760478604d88a3c70b78f578c, type: 3}
+  m_Name: FishPrefabConfig
+  m_EditorClassIdentifier: 
+  smallFemale: {fileID: 8489547932875081956, guid: 1d92ec54a558adb44bf840e603617a9b,
+    type: 3}
+  mediumFemale: {fileID: 7183708760882537701, guid: c5e620c35ea54f44296c997b57530a0b,
+    type: 3}
+  largeFemale: {fileID: 5472292593619520541, guid: 8656d2af9ab8a08449eb24ad066ff0bf,
+    type: 3}
+  smallMale: {fileID: 1565702066780044992, guid: fe78dfc78bd1b09468a93f0d9deeb60f,
+    type: 3}
+  mediumMale: {fileID: 2570467533265043449, guid: 7e257da98679b594e9ff2687ef9e5da9,
+    type: 3}
+  largeMale: {fileID: 8703597801045833717, guid: c121e9453571e6a4689460171f24e060,
+    type: 3}

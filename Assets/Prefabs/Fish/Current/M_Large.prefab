@@ -86,7 +86,7 @@ Transform:
   m_GameObject: {fileID: 7489468708687156160}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -345.1, y: -31.7, z: 734.9}
-  m_LocalScale: {x: 1, y: 1.0000005, z: 1.0000005}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 7489468709680119310}
   m_Father: {fileID: 0}
@@ -257,6 +257,7 @@ GameObject:
   - component: {fileID: 7489468709680119309}
   - component: {fileID: 7489468709680119308}
   - component: {fileID: 7489468709680119311}
+  - component: {fileID: 155925030378220010}
   m_Layer: 8
   m_Name: SalmonMorph
   m_TagString: Untagged
@@ -329,6 +330,23 @@ CapsuleCollider:
   m_Height: 10
   m_Direction: 0
   m_Center: {x: -18.35, y: 1.3, z: 0}
+--- !u!114 &155925030378220010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7489468709680119305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea2d9639c5f7462d876a6ec3a6a3be9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingEnergy: 35000
+  baselineEnergyUsageRate: 1
+  motionEnergyUsageRate: 1
+  maxSwimSpeed: 100
+  rotateSpeed: 1
 --- !u!1 &7489468709695506915
 GameObject:
   m_ObjectHideFlags: 0

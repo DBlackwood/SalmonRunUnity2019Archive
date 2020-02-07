@@ -6,7 +6,6 @@ using UnityEngine;
  * Class that controls a single fish
  */
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(CapsuleCollider))]
 public class Fish : MonoBehaviour
 {
     // amount of energy the fish has when they spawn
@@ -33,9 +32,6 @@ public class Fish : MonoBehaviour
     // the fish's genome
     private FishGenome genome;
 
-    // fish's collider
-    private CapsuleCollider fishCollider;
-
     // fish appearance controller
     private FishAppearance fishAppearance;
 
@@ -61,7 +57,6 @@ public class Fish : MonoBehaviour
     {
         // get refs
         rigid = GetComponent<Rigidbody>();
-        fishCollider = GetComponent<CapsuleCollider>();
         fishAppearance = GetComponentInChildren<FishAppearance>();
 
         // set up initial energy
@@ -97,10 +92,10 @@ public class Fish : MonoBehaviour
         rigid.velocity = Vector3.ClampMagnitude(rigid.velocity, maxSwimSpeed);
 
         // attempt to rotate to face the direction of motion
-        float angle = Mathf.Atan2(totalMovement.y, totalMovement.x) * Mathf.Rad2Deg + 180;
+        float angle = Mathf.Atan2(totalMovement.y, totalMovement.x) * Mathf.Rad2Deg;
         Debug.DrawRay(transform.GetChild(1).position, totalMovement);
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.GetChild(1).rotation = Quaternion.Slerp(transform.GetChild(1).rotation, q, rotateSpeed * Time.fixedDeltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, q, rotateSpeed * Time.fixedDeltaTime);
 
         // use energy
         ExpendEnergy(totalMovement.magnitude, vectorFieldGridScale);

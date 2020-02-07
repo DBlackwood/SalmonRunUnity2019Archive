@@ -44,6 +44,19 @@ public abstract class TowerBase: MonoBehaviour, IDragAndDropObject, IPausable
         StartCoroutine(StartTowerEffectLoop());
     }
 
+    /**
+     * Handle mouse over
+     */
+    private void OnMouseOver()
+    {
+        // check for RMB
+        if (Input.GetMouseButtonDown(1))
+        {
+            // if RMB down, delete the tower from the root
+            Destroy(transform.root.gameObject);
+        }
+    }
+
     #endregion
 
     #region Getters and Setters

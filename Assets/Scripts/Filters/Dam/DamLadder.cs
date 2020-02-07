@@ -12,6 +12,9 @@ public class DamLadder : MonoBehaviour, IDragAndDropObject
     public float mediumCrossingRate;
     [Range(0f, 1f)]
     public float largeCrossingRate;
+    // initialized in Unity
+    // Project -> Assets -> Prefabs -> Filters -> Dam -> DamLadder
+    // (make sure to double click on DamLadder cube symbol. 
 
     #region IDragAndDropObject Implementation
 
