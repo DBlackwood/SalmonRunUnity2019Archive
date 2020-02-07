@@ -12,10 +12,7 @@ public abstract class TowerBase: MonoBehaviour, IDragAndDropObject, IPausable
     [SerializeField]
     protected int effectRadius;
 
-    // whether the tower is currently activated or not
-    public bool TowerActive { get; set; }
-
-    // whether the tower is paused or not
+    // whether the tower is turned on or not
     protected bool paused = true;
 
     // time between each application of tower effects
@@ -68,10 +65,10 @@ public abstract class TowerBase: MonoBehaviour, IDragAndDropObject, IPausable
      */
     protected IEnumerator StartTowerEffectLoop()
     {
-        while (TowerActive && isActiveAndEnabled)
+        while (isActiveAndEnabled)
         {
             yield return new WaitForSeconds(timePerApplyEffect);
-            if (TowerActive && !paused)
+            if (!paused)
             {
                 ApplyTowerEffect();
             }
@@ -97,6 +94,8 @@ public abstract class TowerBase: MonoBehaviour, IDragAndDropObject, IPausable
     {
         paused = false;
     }
+
+
 
     #endregion
 
