@@ -2,23 +2,23 @@ fileFormatVersion: 2
 guid: 1ae1c37e4d0bc5840bafad1bcfabdfc7
 TextureImporter:
   fileIDToRecycleName:
-    21300000: SRGUI_LeftBracket
-    21300002: SRGUI_RightBracket
-    21300004: SRGUI_FFX2
-    21300006: SRGUI_Pause
-    21300008: SRGUI_GraphBar
-    21300010: SRGUI_StopH
-    21300012: SRGUI_RewindH
-    21300014: SRGUI_PlayH
-    21300016: SRGUI_FastForwardH
-    21300018: SRGUI_FFx2H
-    21300020: SRGUI_PauseH
-    21300022: SRGUI_BottomTray
-    21300024: SRGUI_FastForward
-    21300026: SRGUI_Play
-    21300028: SRGUI_Rewind
-    21300030: SRGUI_Stop
-    21300032: SRGUI_Bumper
+    21300000: SR_GUI_V6_24x_0
+    21300002: SR_GUI_V6_24x_1
+    21300004: SR_GUI_V6_24x_3
+    21300006: SR_GUI_V6_24x_6
+    21300008: SR_GUI_V6_24x_9
+    21300010: SR_GUI_V6_24x_19
+    21300012: SR_GUI_V6_24x_20
+    21300014: SR_GUI_V6_24x_21
+    21300016: SR_GUI_V6_24x_22
+    21300018: SR_GUI_V6_24x_23
+    21300020: SR_GUI_V6_24x_24
+    21300022: SR_GUI_V6_24x_25
+    21300024: SR_GUI_V6_24x_2
+    21300026: SR_GUI_V6_24x_4
+    21300028: SR_GUI_V6_24x_5
+    21300030: SR_GUI_V6_24x_7
+    21300032: SR_GUI_V6_24x_8
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -101,7 +101,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SRGUI_LeftBracket
+      name: SR_GUI_V6_24x_0
       rect:
         serializedVersion: 2
         x: 0
@@ -109,7 +109,7 @@ TextureImporter:
         width: 1342
         height: 234
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -121,7 +121,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SRGUI_RightBracket
+      name: SR_GUI_V6_24x_1
       rect:
         serializedVersion: 2
         x: 1372
@@ -129,7 +129,7 @@ TextureImporter:
         width: 1348
         height: 234
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -141,7 +141,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SRGUI_FFX2
+      name: SR_GUI_V6_24x_3
       rect:
         serializedVersion: 2
         x: 3740
@@ -149,7 +149,7 @@ TextureImporter:
         width: 147
         height: 151
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -161,7 +161,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SRGUI_Pause
+      name: SR_GUI_V6_24x_6
       rect:
         serializedVersion: 2
         x: 3913
@@ -169,7 +169,7 @@ TextureImporter:
         width: 164
         height: 150
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,7 +181,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SRGUI_GraphBar
+      name: SR_GUI_V6_24x_9
       rect:
         serializedVersion: 2
         x: 4240
@@ -189,7 +189,7 @@ TextureImporter:
         width: 709
         height: 39
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -201,7 +201,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SRGUI_StopH
+      name: SR_GUI_V6_24x_19
       rect:
         serializedVersion: 2
         x: 2977
@@ -209,7 +209,7 @@ TextureImporter:
         width: 162
         height: 153
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -221,7 +221,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SRGUI_RewindH
+      name: SR_GUI_V6_24x_20
       rect:
         serializedVersion: 2
         x: 3163
@@ -229,7 +229,7 @@ TextureImporter:
         width: 165
         height: 152
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -241,7 +241,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SRGUI_PlayH
+      name: SR_GUI_V6_24x_21
       rect:
         serializedVersion: 2
         x: 3350
@@ -249,7 +249,7 @@ TextureImporter:
         width: 165
         height: 153
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -261,7 +261,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SRGUI_FastForwardH
+      name: SR_GUI_V6_24x_22
       rect:
         serializedVersion: 2
         x: 3538
@@ -269,7 +269,7 @@ TextureImporter:
         width: 164
         height: 154
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -281,7 +281,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SRGUI_FFx2H
+      name: SR_GUI_V6_24x_23
       rect:
         serializedVersion: 2
         x: 3726
@@ -289,7 +289,7 @@ TextureImporter:
         width: 162
         height: 153
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -301,7 +301,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SRGUI_PauseH
+      name: SR_GUI_V6_24x_24
       rect:
         serializedVersion: 2
         x: 3913
@@ -309,7 +309,7 @@ TextureImporter:
         width: 164
         height: 151
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -321,7 +321,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SRGUI_BottomTray
+      name: SR_GUI_V6_24x_25
       rect:
         serializedVersion: 2
         x: 0
@@ -329,7 +329,7 @@ TextureImporter:
         width: 5460
         height: 295
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -341,7 +341,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SRGUI_FastForward
+      name: SR_GUI_V6_24x_2
       rect:
         serializedVersion: 2
         x: 3546
@@ -349,7 +349,7 @@ TextureImporter:
         width: 152
         height: 150
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -361,7 +361,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SRGUI_Play
+      name: SR_GUI_V6_24x_4
       rect:
         serializedVersion: 2
         x: 3358
@@ -369,7 +369,7 @@ TextureImporter:
         width: 150
         height: 149
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -381,7 +381,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SRGUI_Rewind
+      name: SR_GUI_V6_24x_5
       rect:
         serializedVersion: 2
         x: 3167
@@ -389,7 +389,7 @@ TextureImporter:
         width: 154
         height: 149
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -401,7 +401,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SRGUI_Stop
+      name: SR_GUI_V6_24x_7
       rect:
         serializedVersion: 2
         x: 2981
@@ -409,7 +409,7 @@ TextureImporter:
         width: 155
         height: 151
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -421,7 +421,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SRGUI_Bumper
+      name: SR_GUI_V6_24x_8
       rect:
         serializedVersion: 2
         x: 2741
@@ -429,7 +429,7 @@ TextureImporter:
         width: 97
         height: 233
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

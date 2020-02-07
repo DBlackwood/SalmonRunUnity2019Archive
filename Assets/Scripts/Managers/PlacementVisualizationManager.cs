@@ -39,12 +39,7 @@ public class PlacementVisualizationManager : MonoBehaviour
         if (type == typeof(Dam))
         {
             // show placement locations for dams
-            DamPlacementLocation.SetDamVisualizations(activate);
-        }
-        else if (type == typeof(DamLadder))
-        {
-            // show placement locations for dam ladders
-            DamPlacementLocation.SetLadderVisualizations(activate);
+            DamPlacementLocation.SetVisualizations(activate);
         }
     }
 }

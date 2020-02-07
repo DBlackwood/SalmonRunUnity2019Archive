@@ -24,9 +24,6 @@ public class Fish : MonoBehaviour
     // speed at which fish will rotate towards direction of motion
     public float rotateSpeed;
 
-    // is this fish being caught?
-    public bool beingCaught { get; private set; } = false;
-
     // fish school the fish belongs to
     private FishSchool school;
 
@@ -183,14 +180,6 @@ public class Fish : MonoBehaviour
     #endregion
 
     #region Fish Management
-
-    /**
-     * Handle fish starting to be caught
-     */
-    public void StartCatch()
-    {
-        beingCaught = true;
-    }
 
     /**
      * Handle this fish being caught

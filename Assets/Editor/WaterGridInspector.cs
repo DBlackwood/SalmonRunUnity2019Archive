@@ -42,10 +42,8 @@ public class WaterGridInspector : Editor
      */
     protected virtual void OnSceneGUI()
     {
-        Debug.Log("in OnSceneGUI");
         // draw handles for all of the vectors
         for (int index = 0; index < vectorField.Vectors.Length; index++)
-        //for (int index = 0; index < 100; index++)
         {
             // only draw a handle if there's actually a water tile there
             Vector2Int index2D = controller.GetTwoDimensionalIndex(index);

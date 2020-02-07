@@ -57,6 +57,9 @@ public class DragAndDropIcon : MonoBehaviour, IBeginDragHandler, IDragHandler, I
      */
     public void OnBeginDrag(PointerEventData eventData)
     {
+        // set the icon to be on top of other sibling objects
+        rectTransform.SetAsLastSibling();
+
         // spawn the object
         // keep it invisible and don't set position yet because we haven't actually figured out where it's going to go yet
         // but, we need to instantiate it so we can figure out whether 

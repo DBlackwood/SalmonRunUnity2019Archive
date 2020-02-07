@@ -31,9 +31,6 @@ public partial class GameManager : MonoBehaviour
     // current state of the game
     private GameState currentState;
 
-    // name of the previous game state
-    private GameState prevState;
-
     // fish school in the game
     public FishSchool school;
 
@@ -82,18 +79,6 @@ public partial class GameManager : MonoBehaviour
         {
             currentState.UpdateState();
         }
-
-        // check for keyboard input
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            switch (currentState.GetType().Name)
-            {
-                case nameof(RunState):
-                    // for now, this will skip to the run stats state (in case one of the fish gets stuck or something like that
-                    school.KillAllActive();
-                    break;
-            }
-        }     
     }
 
     #endregion
@@ -112,31 +97,15 @@ public partial class GameManager : MonoBehaviour
         }
 
         // hold on to old state
-        prevState = currentState;
+        GameState oldState = currentState;
 
         // update the state
         currentState = newState;
 
         // enter the new state
-        currentState.Enter(prevState);
+        currentState.Enter(oldState);
 
         Debug.Log(" -> " +  currentState.GetType().Name);
-    }
-
-    /**
-     * Go back to the previous state
-     */
-    public void RevertState()
-    {
-        SetState(prevState);
-    }
-
-    /**
-     * Get the current game state
-     */
-    public string GetStateName()
-    {
-        return currentState.GetType().Name;
     }
 
     #endregion
@@ -152,7 +121,7 @@ public partial class GameManager : MonoBehaviour
         // if so, enter the place state
         if (currentState == null)
         {
-            SetState(new RunStatsState());
+            SetState(new PlaceState());
         }
     }
 
@@ -165,12 +134,12 @@ public partial class GameManager : MonoBehaviour
         if (currentState.GetType() == typeof(RunState))
         {
             // pause the game
-            Pause();
+            timeManager.Pause();
         }
     }
 
     /**
-     * React to player pressing the "Play" button
+     * Put the game into normal speed
      */
     public void PlayButton()
     {
@@ -185,22 +154,6 @@ public partial class GameManager : MonoBehaviour
                 NormalSpeed();
                 break;
         }
-    }
-
-    /**
-     * React to player pressing the "Stop" button
-     */
-    public void StopButton()
-    {
-        SetState(new EndState(EndGame.Reason.ManualQuit));
-    }
-
-    /**
-     * Pause the game
-     */
-    public void Pause()
-    {
-        timeManager.Pause();
     }
 
     /**

@@ -22,9 +22,11 @@ public class ObjectSelectManager : MonoBehaviour
 
     private void CheckInput()
     {
-        // only check when mouse is clicked
-        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+        // only check when left mouse is clicked
+        if (Input.GetMouseButtonDown(0))
         {
+            
+
             // raycast into scene from mouse pos to determine what we clicked on
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -32,18 +34,18 @@ public class ObjectSelectManager : MonoBehaviour
             // check if we actually hit an object that we care about
             if (Physics.Raycast(ray, out hit) && hit.collider)
             {
-                CheckForTower(hit.collider.gameObject, Input.GetMouseButtonDown(0));
+                CheckForTower(hit.collider.gameObject);
                 CheckForFish(hit.collider.gameObject);
-            }
+            } 
+
+            
         }
     }
 
     /**
      * Check for a tower and apply the effects that selecting a tower should trigger
-     * 
-     * @param hitObject GameObject The object that the raycast hit
      */
-    private void CheckForTower(GameObject hitObject, bool isLeftMouse)
+    private void CheckForTower(GameObject hitObject)
     {
         // flag to tell us later if we actually hit a tower
         bool hitTower = false;
@@ -57,19 +59,12 @@ public class ObjectSelectManager : MonoBehaviour
             // set flag so we know later that we hit a tower
             hitTower = true;
 
-            // turn off previous effect if there was one
-            if (selectedRangeEffect != null && selectedRangeEffect != hitObject.GetComponent<TowerRangeEffect>())
-            {
-                // turn the neutral range effect off
-                selectedRangeEffect.UpdateEffect(TowerRangeEffect.EffectState.Off);
-            }
-
             // set as selected tower
             selectedTower = towerTemp;
 
             // get the range effect component and update it to show the neutral tower range effect
             selectedRangeEffect = hitObject.GetComponent<TowerRangeEffect>();
-            selectedRangeEffect.UpdateEffect(selectedRangeEffect.State == TowerRangeEffect.EffectState.Off ? TowerRangeEffect.EffectState.Neutral : TowerRangeEffect.EffectState.Off);
+            selectedRangeEffect.UpdateEffect(TowerRangeEffect.EffectState.Neutral);
         }
 
         // if we did not hit a tower, remove selected tower
@@ -102,10 +97,9 @@ public class ObjectSelectManager : MonoBehaviour
 
         if (fish != null && fish.isActiveAndEnabled)
         {
-            Debug.Log(fish.GetGenome()[FishGenome.GeneType.Sex].momGene);
-            Debug.Log(fish.GetGenome()[FishGenome.GeneType.Sex].dadGene);
-            Debug.Log(fish.GetGenome()[FishGenome.GeneType.Size].momGene);
-            Debug.Log(fish.GetGenome()[FishGenome.GeneType.Size].dadGene);
+            // if we hit a fish, set the stats panel to fish mode and update it
+            StatsPanelManager.Instance.UpdateFish(fish);
+            StatsPanelManager.Instance.SetState(1);
         }
     }
 }

@@ -6,27 +6,16 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class FishermanTower : TowerBase
 {
-    // mesh renderer that will flash when the fisherman tower is affected by a ranger or another tower
-    public MeshRenderer flashRenderer;
-
-    // materials for line renderer that indicates whether a fish has been hit or missed
     public Material hitLineMaterial;
     public Material missLineMaterial;
-
-    // material that will 
     public Material flashMaterial;
 
-    // default rate of success of a fish catch attempt
+    // rate of success of a fish catch attempt
     [Range(0f, 1f)]
-    public float defaultCatchRate;
+    public float catchRate;
 
     // how many times the fish will flash in and out to show it is being caught
     public int numFlashesPerCatch;
-
-    // current rate of success of fish catch attempt for small, medium, and large fish
-    private float currentSmallCatchRate;
-    private float currentMediumCatchRate;
-    private float currentLargeCatchRate;
 
     // fish that have been caught by this fisherman
     private List<Fish> caughtFish;
@@ -42,13 +31,7 @@ public class FishermanTower : TowerBase
      */   
     protected override void Awake()
     {
-        // bas class awake
         base.Awake();
-
-        // set current catch rates
-        currentSmallCatchRate = defaultCatchRate;
-        currentMediumCatchRate = defaultCatchRate;
-        currentLargeCatchRate = defaultCatchRate;
     }
 
     /**
@@ -77,19 +60,6 @@ public class FishermanTower : TowerBase
     }
 
     /**
-     * Affect the catch rate of a fish for a certain amount of time
-     * 
-     * @param smallEffect float The value that the current catch rate will be modified by for small fish
-     * @param mediumEffect float The value that the current catch rate will be modified by for medium fish
-     * @param largeEffect float The value that the current catch rate will be modified by for large fish
-     * @param length float The amount of time (in seconds) that the effect will last
-     */
-    public void AffectCatchRate(float smallEffect, float mediumEffect, float largeEffect, float length)
-    {
-        StartCoroutine(AffectCatchRateCoroutine(smallEffect, mediumEffect, largeEffect, length));
-    }
-
-    /**
      * Determine whether a fisherman could be placed at the location specified by a raycast
      * 
      * @param primaryHitInfo RaycastHit The results of the raycast that was done
@@ -107,7 +77,7 @@ public class FishermanTower : TowerBase
             {
                 return hitInfo.collider &&
                        hitInfo.collider.gameObject.layer == correctLayer &&
-                       Mathf.Abs(hitInfo.point.z - primaryHitInfo.point.z) < 1f;
+                       Mathf.Abs(hitInfo.point.z - primaryHitInfo.point.z) < 0.1f;
             });
         }
 
@@ -131,21 +101,8 @@ public class FishermanTower : TowerBase
      */
     protected override void ApplyTowerEffect()
     {
-        // get all fish that aren't already being caught
-        Collider[] fishColliders = Physics.OverlapSphere(transform.position, GetEffectRadius(), LayerMask.GetMask(Layers.FISH_LAYER_NAME))
-            .Where((fishCollider) => {
-                Fish f = fishCollider.GetComponent<Fish>();
+        Collider[] fishColliders = Physics.OverlapSphere(transform.position, GetEffectRadius(), LayerMask.GetMask(Layers.FISH_LAYER_NAME));
 
-                // throw a warning if something on the fish layer doesn't have a Fish component
-                if (f == null)
-                {
-                    Debug.LogWarning("Something on the fish layer does not have a Fish component!");
-                }
-
-                return f != null && !f.beingCaught;
-            }).ToArray();
-
-        // select one of the fish
         if (fishColliders.Length > 0)
         {
             Fish f = fishColliders[Random.Range(0, fishColliders.Length)].GetComponent<Fish>();
@@ -158,7 +115,7 @@ public class FishermanTower : TowerBase
             }
             else
             {
-                Debug.LogError("Error with selecting random fish to catch -- should not happen!");
+                Debug.LogError("Something on the fish layer does not have a Fish component!");
             }
         }
         
@@ -177,23 +134,6 @@ public class FishermanTower : TowerBase
      */
     private IEnumerator TryCatchFishCoroutine(Fish fish)
     {
-        // how likely we are to catch fish is dependent on what size the fish is
-        // determine that now
-        float catchRate;
-        FishGenePair sizeGenePair = fish.GetGenome()[FishGenome.GeneType.Size];
-        if (sizeGenePair.momGene == FishGenome.b && sizeGenePair.dadGene == FishGenome.b)
-        {
-            catchRate = currentSmallCatchRate;
-        }
-        else if (sizeGenePair.momGene == FishGenome.B && sizeGenePair.dadGene == FishGenome.B)
-        {
-            catchRate = currentMediumCatchRate;
-        }
-        else
-        {
-            catchRate = currentLargeCatchRate;
-        }
-
         // figure out whether the fish will be caught or not
         bool caught = Random.Range(0f, 1f) <= catchRate;
 
@@ -208,9 +148,6 @@ public class FishermanTower : TowerBase
         // handle fish being caught
         if (caught)
         {
-            // tell the fish that it is being caught
-            fish.StartCatch();
-
             // make the fish flash  for a bit
             SkinnedMeshRenderer fishRenderer = fish.GetComponentInChildren<SkinnedMeshRenderer>();
             for (int i = 0; i < numFlashesPerCatch; i++)
@@ -238,32 +175,11 @@ public class FishermanTower : TowerBase
     }
 
     /**
-     * Coroutine for affecting the catch rate of the angler
-     * 
-     * @param smallEffect float The value that the catch rate will be modified by for small fish
-     * @param mediumEffect float The value that the catch rate will be modified by for medium fish
-     * @param largeEffect float The value that the catch rate will be modified by for large fish
-     * @param length float The amount of time (seconds) that the effect will last
-     */
-    private IEnumerator AffectCatchRateCoroutine(float smallEffect, float mediumEffect, float largeEffect, float length)
-    {
-        currentSmallCatchRate += smallEffect;
-        currentMediumCatchRate += mediumEffect;
-        currentLargeCatchRate += largeEffect;
-
-        yield return new WaitForSeconds(length);
-
-        currentSmallCatchRate -= smallEffect;
-        currentMediumCatchRate -= mediumEffect;
-        currentLargeCatchRate -= largeEffect;
-    }
-
-    /**
      * Set line position for a fish
      */
     private void SetLinePos()
     {
-        Vector3 startPos = new Vector3(transform.position.x, transform.position.y, transform.position.z - 40);
+        Vector3 startPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         Vector3 fishPos = catchAttemptFish.transform.position;
         fishPos.z = startPos.z;
 

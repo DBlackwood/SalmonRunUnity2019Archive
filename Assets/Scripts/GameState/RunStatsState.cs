@@ -12,8 +12,7 @@ public class RunStatsState : GameState
      */
     public override void Enter(GameState oldState)
     {
-        // invoke event
-        GameEvents.onStartRunStats.Invoke();
+
     }
 
     /**

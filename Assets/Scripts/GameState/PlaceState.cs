@@ -12,8 +12,8 @@ public class PlaceState : GameState
      */
     public override void Enter(GameState oldState)
     {
-        // pause the game
-        GameManager.Instance.PauseButton();
+        // set to normal run speed
+        GameManager.Instance.NormalSpeed();
     }
 
     /**

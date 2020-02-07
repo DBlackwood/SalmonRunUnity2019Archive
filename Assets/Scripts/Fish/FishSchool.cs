@@ -7,8 +7,8 @@ using System.Linq;
 public class FishSchool : MonoBehaviour, IPausable {
 
     [Header("References")]
-    // fish prefab config gameobject
-    public FishPrefabConfig fishPrefabConfig;
+    // fish prefab
+    public GameObject fishPrefab;
 
     // controller through which vector field can be accessed
     public WaterGridController controller;
@@ -164,19 +164,6 @@ public class FishSchool : MonoBehaviour, IPausable {
     }
 
     /**
-     * Kill all fish that are not already dead or at a spawning ground
-     * 
-     * Primarily for purposes of preventing soft-lock of gameplay if a fish won't die
-     */
-    public void KillAllActive()
-    {
-        while (fishList.Count > 0)
-        {
-            fishList[0].Catch();
-        }
-    }
-
-    /**
      * Check if there are any more fish still trying to reach the goal -- if not, end the run
      */
     private void CheckForEndOfRun()
@@ -265,7 +252,7 @@ public class FishSchool : MonoBehaviour, IPausable {
         // make variable for holding parent genomes
         List<FishGenome> parentGenomes = null;
 
-        // if it's the 0th turn, generate a full set of genomes from nothing
+        // if it's the first turn, generate a full set of genomes from nothing
         if (GameManager.Instance.Turn == 1)
         {
             nextGenerationGenomes = FishGenomeUtilities.MakeNewGeneration(initialNumFish, true, true);
@@ -313,7 +300,7 @@ public class FishSchool : MonoBehaviour, IPausable {
     {
         // loop until we've spawned enough fish
         int spawnedCount = 0;
-        while (spawnedCount < genomes.Count && GameManager.Instance.GetStateName() == nameof(RunState))
+        while (spawnedCount < genomes.Count)
         {
             // only spawn when we're not paused
             if (!paused)
@@ -327,7 +314,7 @@ public class FishSchool : MonoBehaviour, IPausable {
                     Vector3 spawnPos = new Vector3(Random.Range(topLeft.x, topRight.x), Random.Range(bottomLeft.y, topLeft.y), spawnZ);
 
                     // create the fish at the given position and tell it what school it belongs to
-                    fishList.Add(Instantiate(fishPrefabConfig.GetFishPrefab(genomes[fishList.Count]), spawnPos, Quaternion.identity).GetComponentInChildren<Fish>());
+                    fishList.Add(Instantiate(fishPrefab, spawnPos, Quaternion.identity).GetComponentInChildren<Fish>());
                     fishList[fishList.Count - 1].SetSchool(this);
                     fishList[fishList.Count - 1].SetGenome(genomes[fishList.Count - 1]);
 

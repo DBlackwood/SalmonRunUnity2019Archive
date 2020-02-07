@@ -5,9 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(TowerBase))]
 public class TowerRangeEffect : MonoBehaviour
 {
-    // currently selected tower effect
-    public static TowerRangeEffect currentlySelectedRangeEffect { get; private set; }
-
     /**
      * Enum representing states the range effect can be in
      */
@@ -29,14 +26,12 @@ public class TowerRangeEffect : MonoBehaviour
     private GameObject rangeVisualizationObj;
 
     // the current state of this range effect
-    public EffectState State { get; private set; } = EffectState.Off;
+    private EffectState state;
 
     // the actual tower component this effect is for
     private TowerBase tower;
 
-    /**
-     * Start is called before the first frame update
-     */
+    // Start is called before the first frame update
     private void Start()
     {
         // get component reference
@@ -47,37 +42,15 @@ public class TowerRangeEffect : MonoBehaviour
     }
 
     /**
-     * Handle left click on the tower range effect
-     */
-    private void OnMouseDown()
-    {
-        // make sure the tower is on
-        if (tower.isActiveAndEnabled)
-        {
-            // if a tower effect is already on and it's not this one, turn it off
-            if (currentlySelectedRangeEffect != null && currentlySelectedRangeEffect != this)
-            {
-                currentlySelectedRangeEffect.UpdateEffect(EffectState.Off);
-            }
-
-            // update currently selected range effect
-            currentlySelectedRangeEffect = this;
-
-            // toggle the selected range effect
-            UpdateEffect(State == EffectState.Off ? EffectState.Neutral : EffectState.Off);
-        }
-    }
-
-    /**
      * Update the tower range effect's state
      */
     public void UpdateEffect(EffectState effectState)
     {
         // update the state
-        State = effectState;
+        state = effectState;
 
         // special case for turning it off
-        if (State == EffectState.Off)
+        if (state == EffectState.Off)
         {
             // turn off the range visualizer object
             rangeVisualizationObj.SetActive(false);
@@ -89,7 +62,7 @@ public class TowerRangeEffect : MonoBehaviour
 
             // get the correct material to apply using switch statement
             Material m = neutralMaterial;
-            switch (State)
+            switch (state)
             {
 
                 case EffectState.Neutral:
