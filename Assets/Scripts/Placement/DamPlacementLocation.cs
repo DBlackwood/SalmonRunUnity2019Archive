@@ -103,7 +103,7 @@ public class DamPlacementLocation : MonoBehaviour
             damLadder.transform.localScale = ladderMeshRenderer.transform.localScale;
 
             // tell the dam that a ladder is being attached
-            currentDam.AddLadder();
+            currentDam.AddLadder(damLadder);
 
             // this dam location now has a ladder attached to it
             HasLadder = true;

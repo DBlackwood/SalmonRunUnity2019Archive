@@ -64,27 +64,30 @@ public class PostRunStatsPanel : MonoBehaviour
      */
     private void UpdatePanelData(List<FishGenome> parentGenomes, List<FishGenome> offspringGenomes)
     {
-        titleText.text = "Turn " + GameManager.Instance.Turn.ToString();
-
-        // parent genome can be null if this is the initial generation and there are no parents
-        // have to treat these two cases differently
-        if (parentGenomes != null)
+        // only update if we've actually run a full turn
+        if (GameManager.Instance.Turn > 1)
         {
-            parentSmallText.text = smallDescriptor + divider + FishGenomeUtilities.FindSmallGenomes(parentGenomes).Count.ToString();
-            parentMediumText.text = mediumDescriptor + divider + FishGenomeUtilities.FindMediumGenomes(parentGenomes).Count.ToString();
-            parentLargeText.text = largeDescriptor + divider + FishGenomeUtilities.FindLargeGenomes(parentGenomes).Count.ToString();
-        }
-        else
-        {
-            parentSmallText.text = smallDescriptor + divider + "N/A";
-            parentMediumText.text = mediumDescriptor + divider + "N/A";
-            parentLargeText.text = largeDescriptor + divider + "N/A";
-        }
+            // display the previous turn (because that's what
+            titleText.text = "Turn " + (GameManager.Instance.Turn - 1).ToString() + " Summary";
 
-        offspringSmallText.text = smallDescriptor + divider + FishGenomeUtilities.FindSmallGenomes(offspringGenomes).Count.ToString();
-        offspringMediumText.text = mediumDescriptor + divider + FishGenomeUtilities.FindMediumGenomes(offspringGenomes).Count.ToString();
-        offspringLargeText.text = largeDescriptor + divider + FishGenomeUtilities.FindLargeGenomes(offspringGenomes).Count.ToString();
-        offspringFemaleText.text = femaleDescriptor + divider + FishGenomeUtilities.FindFemaleGenomes(offspringGenomes).Count.ToString();
-        offspringMaleText.text = maleDescriptor + divider + FishGenomeUtilities.FindMaleGenomes(offspringGenomes).Count.ToString();
+            // parent genome can be null if this is the initial generation and there are no parents
+            // have to treat these two cases differently
+            if (parentGenomes != null)
+            {
+                parentSmallText.text = smallDescriptor + divider + FishGenomeUtilities.FindSmallGenomes(parentGenomes).Count.ToString();
+                parentMediumText.text = mediumDescriptor + divider + FishGenomeUtilities.FindMediumGenomes(parentGenomes).Count.ToString();
+                parentLargeText.text = largeDescriptor + divider + FishGenomeUtilities.FindLargeGenomes(parentGenomes).Count.ToString();
+            }
+            else
+            {
+                Debug.LogError("Error -- no parent genomes! should not happen!");
+            }
+
+            offspringSmallText.text = smallDescriptor + divider + FishGenomeUtilities.FindSmallGenomes(offspringGenomes).Count.ToString();
+            offspringMediumText.text = mediumDescriptor + divider + FishGenomeUtilities.FindMediumGenomes(offspringGenomes).Count.ToString();
+            offspringLargeText.text = largeDescriptor + divider + FishGenomeUtilities.FindLargeGenomes(offspringGenomes).Count.ToString();
+            offspringFemaleText.text = femaleDescriptor + divider + FishGenomeUtilities.FindFemaleGenomes(offspringGenomes).Count.ToString();
+            offspringMaleText.text = maleDescriptor + divider + FishGenomeUtilities.FindMaleGenomes(offspringGenomes).Count.ToString();
+        }
     }
 }

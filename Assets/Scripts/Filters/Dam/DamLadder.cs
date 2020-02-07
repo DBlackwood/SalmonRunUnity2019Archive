@@ -5,6 +5,14 @@ using UnityEngine;
 public class DamLadder : MonoBehaviour, IDragAndDropObject
 {
 
+    // rate at which small, medium, and large fish should be able to pass a dam with a ladder installed
+    [Range(0f, 1f)]
+    public float smallCrossingRate;
+    [Range(0f, 1f)]
+    public float mediumCrossingRate;
+    [Range(0f, 1f)]
+    public float largeCrossingRate;
+
     #region IDragAndDropObject Implementation
 
     /**

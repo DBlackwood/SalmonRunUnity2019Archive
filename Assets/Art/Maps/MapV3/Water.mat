@@ -119,7 +119,7 @@ Material:
     - _BorderColor: {r: 1, g: 1, b: 1, a: 1}
     - _BumpDirection: {r: 1, g: 1, b: -1, a: 1}
     - _BumpTiling: {r: 1, g: 1, b: -2, a: 3}
-    - _Color: {r: 0.07075471, g: 0.9125416, b: 1, a: 0.37254903}
+    - _Color: {r: 0.07075471, g: 0.9125416, b: 1, a: 0.22745098}
     - _DepthGradientDeep: {r: 0.25231397, g: 0.46026954, b: 0.8490566, a: 0.749}
     - _DepthGradientShallow: {r: 0.22459061, g: 0.78152514, b: 0.9716981, a: 0.725}
     - _DistTiling: {r: 50, g: 50, b: 50, a: 50}

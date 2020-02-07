@@ -11,6 +11,11 @@ public class Dam : FilterBase, IDragAndDropObject
     [Range(0f, 1f)]
     public float defaultCrossingRate;
 
+    // crossing rates for small, medium, and large fish
+    private float smallCrossingRate;
+    private float mediumCrossingRate;
+    private float largeCrossingRate;
+
     // is there a ladder currently attached to the dam?
     private bool hasLadder = false;
 
@@ -22,7 +27,8 @@ public class Dam : FilterBase, IDragAndDropObject
      */
     void Start()
     {
-        
+        // set all crossing rates to default rate on initialization
+        smallCrossingRate = mediumCrossingRate = largeCrossingRate = defaultCrossingRate;
     }
 
     /** 
@@ -51,8 +57,14 @@ public class Dam : FilterBase, IDragAndDropObject
      * 
      * Set a flag so we can apply ladder effects later
      */
-    public void AddLadder()
+    public void AddLadder(DamLadder damLadder)
     {
+        // set crossing rates for fish to ones supplied by the ladder
+        smallCrossingRate = damLadder.smallCrossingRate;
+        mediumCrossingRate = damLadder.mediumCrossingRate;
+        largeCrossingRate = damLadder.largeCrossingRate;
+
+        // set flag so we know we have a ladder
         hasLadder = true;
     }
 
@@ -108,9 +120,26 @@ public class Dam : FilterBase, IDragAndDropObject
         // only let it through if it hasn't been flagged as stuck
         if (!fish.IsStuck())
         {
-            // chance between fish getting past the dam and being caught/getting stuck
-            // TODO: make this based on fish traits rather than 50/50 chance
-            if (Random.Range(0f, 1f) <= defaultCrossingRate)
+            // chance between fish getting past the dam and being caught/getting stuck depends on what size the fish is
+            float crossingRate;
+
+            FishGenePair sizeGenePair = fish.GetGenome()[FishGenome.GeneType.Size];
+            if (sizeGenePair.momGene == FishGenome.b && sizeGenePair.dadGene == FishGenome.b)
+            {
+                crossingRate = smallCrossingRate;
+            }
+            else if (sizeGenePair.momGene == FishGenome.B && sizeGenePair.dadGene == FishGenome.B)
+            {
+                crossingRate = mediumCrossingRate;
+            }
+            else
+            {
+                crossingRate = largeCrossingRate;
+            }
+            
+            // based on the crossing rate we figured out, roll for a crossing
+            // if we pass, put the fish past the dam
+            if (Random.Range(0f, 1f) <= crossingRate)
             {
                 fish.transform.position = GetRandomDropOff(fish.transform.position.z);
             }
