@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{E2017027-8586-F6B6-0095-006D20232B1E}</ProjectGuid>
+    <ProjectGuid>{EFD7EF2D-83EA-4C9C-6D3E-49B40A81FBC5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -62,19 +62,19 @@
   <ItemGroup>
     <Compile Include="Assets\Editor\WaterGridInspector.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRun2019_0522/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRunUnity2019_0503/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRun2019_0522/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRunUnity2019_0503/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRun2019_0522/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRunUnity2019_0503/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRun2019_0522/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRunUnity2019_0503/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRun2019_0522/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRunUnity2019_0503/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/Hub/Editor/2018.3.14f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -323,25 +323,25 @@
       <HintPath>/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Advertisements.Editor">
-      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRun2019_0522/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.Editor.dll</HintPath>
+      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRunUnity2019_0503/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Advertisements">
-      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRun2019_0522/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.dll</HintPath>
+      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRunUnity2019_0503/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
-      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRun2019_0522/Library/PackageCache/com.unity.ads@2.3.1/Editor/UnityEditor.Advertisements.dll</HintPath>
+      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRunUnity2019_0503/Library/PackageCache/com.unity.ads@2.3.1/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRun2019_0522/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRunUnity2019_0503/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRun2019_0522/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRunUnity2019_0503/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRun2019_0522/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRunUnity2019_0503/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
-      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRun2019_0522/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
+      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRunUnity2019_0503/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>/Applications/Unity/Hub/Editor/2018.3.14f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -706,7 +706,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{46539A01-653E-0F6D-2E1B-42EF7A2CF304}</Project>
+      <Project>{DB3E4B49-84C0-C91C-D9D1-955A5F6DA785}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
   </ItemGroup>

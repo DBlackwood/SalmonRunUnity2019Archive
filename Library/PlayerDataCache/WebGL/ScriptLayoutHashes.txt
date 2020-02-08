@@ -1,6 +1,6 @@
 WebGL
 PlayerPath?
-/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRun2019_0522/Builds_WebGL/A90-2-1d150_R30-0-0_D10L907010_C-1500-1000_7000_1000
+/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRun2019_0524_from03/Builds/WebGL/A90-2-1d100_R30-0-0_D10L907010_C-1500-900_9000_800_d2019_0524after
 SceneListBegin?
 Assets/_Scenes/MapV2/DemoLevel.unity
 SceneListEnd?

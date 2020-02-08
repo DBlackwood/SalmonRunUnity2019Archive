@@ -44856,22 +44856,22 @@ PrefabInstance:
     - target: {fileID: 114091981109369916, guid: 9bbd2b4f09bd08f448f24579485278e8,
         type: 3}
       propertyPath: xMin
-      value: -1500
+      value: -1900
       objectReference: {fileID: 0}
     - target: {fileID: 114091981109369916, guid: 9bbd2b4f09bd08f448f24579485278e8,
         type: 3}
       propertyPath: yMin
-      value: -1000
+      value: -900
       objectReference: {fileID: 0}
     - target: {fileID: 114091981109369916, guid: 9bbd2b4f09bd08f448f24579485278e8,
         type: 3}
       propertyPath: xMax
-      value: 7000
+      value: 9000
       objectReference: {fileID: 0}
     - target: {fileID: 114091981109369916, guid: 9bbd2b4f09bd08f448f24579485278e8,
         type: 3}
       propertyPath: yMax
-      value: 1000
+      value: 800
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bbd2b4f09bd08f448f24579485278e8, type: 3}
@@ -44980,6 +44980,11 @@ PrefabInstance:
         type: 3}
       propertyPath: randomMovementMultiplier
       value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321721658432575645, guid: a5e01420cd1b09347905952248a95496,
+        type: 3}
+      propertyPath: maxOffspring
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2321721658432575646, guid: a5e01420cd1b09347905952248a95496,
         type: 3}
@@ -46225,9 +46230,7 @@ PrefabInstance:
     - target: {fileID: 5614493208682226256, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
         type: 3}
       propertyPath: m_Text
-      value: 'View Controls:
-
-        W = move up
+      value: 'W = move up
 
         A = move left
 
@@ -46243,16 +46246,24 @@ PrefabInstance:
     - target: {fileID: 7339198027924067928, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
         type: 3}
       propertyPath: m_Text
-      value: '
-
-        Q = zoom out
+      value: 'Q = zoom out
 
         E = zoom in
 
+        mouse scroll
 
-        Version
+        two finger track pad'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339198027924067928, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Q = zoom out
 
-        A90-2-1d150_R30-0-0_D20L9070-5Cfull'
+        E = zoom in
+
+        mouse scroll
+
+        two finger track pad'
       objectReference: {fileID: 0}
     - target: {fileID: 7993774778931363191, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
         type: 3}
@@ -46334,6 +46345,35 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 2901931771509901393, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Version: A90-2-1d100_R30-0-0_D10L907010_C-1500-900_9000_800_d2019_0524after'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2901931771509901393, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6196628295215991980, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 6196628295215991980, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409190095, guid: 75b4a9cd018f0ed44bf34999ba93aec8, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1229485970007022004, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
+        type: 3}
+      propertyPath: m_Text
+      value: Version A902010d100_R30-0-0_D10L907010_C-1500-900_800
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75b4a9cd018f0ed44bf34999ba93aec8, type: 3}
 --- !u!1001 &6340271509701420511
@@ -46407,6 +46447,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340271509701420513, guid: fb247d26aa00d9841b9f058d8f3ba7e0,
+        type: 3}
+      propertyPath: numNestingSights
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb247d26aa00d9841b9f058d8f3ba7e0, type: 3}

@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c29c47e63b5c0744ba40e12c5e4086a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectRadius: 150
+  effectRadius: 100
   timePerApplyEffect: 3
   flashRenderer: {fileID: 3915317862802125498}
   hitLineMaterial: {fileID: 2100000, guid: babc363db094c014497dd0ee086de570, type: 2}
@@ -160,8 +160,8 @@ MonoBehaviour:
   flashMaterial: {fileID: 2100000, guid: 15a1b3c7cd9cfcf4abef70e065f15150, type: 2}
   defaultCatchRate: 1
   numFlashesPerCatch: 3
-  defaultSmallCatchRate: 0.01
-  defaultMediumCatchRate: 0.02
+  defaultSmallCatchRate: 0.1
+  defaultMediumCatchRate: 0.2
   defaultLargeCatchRate: 0.9
 --- !u!114 &1090831969527300733
 MonoBehaviour:
