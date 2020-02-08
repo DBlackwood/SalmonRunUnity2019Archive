@@ -1602,12 +1602,12 @@ PrefabInstance:
     - target: {fileID: 8724541982035445974, guid: 42b886822610e1a4a90b4950530ef19b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1940
       objectReference: {fileID: 0}
     - target: {fileID: 8724541982035445974, guid: 42b886822610e1a4a90b4950530ef19b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 470
       objectReference: {fileID: 0}
     - target: {fileID: 8724541982035445974, guid: 42b886822610e1a4a90b4950530ef19b,
         type: 3}
@@ -44853,6 +44853,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114091981109369916, guid: 9bbd2b4f09bd08f448f24579485278e8,
+        type: 3}
+      propertyPath: xMin
+      value: -1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 114091981109369916, guid: 9bbd2b4f09bd08f448f24579485278e8,
+        type: 3}
+      propertyPath: yMin
+      value: -1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114091981109369916, guid: 9bbd2b4f09bd08f448f24579485278e8,
+        type: 3}
+      propertyPath: xMax
+      value: 7000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114091981109369916, guid: 9bbd2b4f09bd08f448f24579485278e8,
+        type: 3}
+      propertyPath: yMax
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bbd2b4f09bd08f448f24579485278e8, type: 3}
 --- !u!1001 &673693558417336867
@@ -44950,6 +44970,16 @@ PrefabInstance:
         type: 3}
       propertyPath: initialNumFish
       value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321721658432575645, guid: a5e01420cd1b09347905952248a95496,
+        type: 3}
+      propertyPath: maxOffspring
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321721658432575645, guid: a5e01420cd1b09347905952248a95496,
+        type: 3}
+      propertyPath: randomMovementMultiplier
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 2321721658432575646, guid: a5e01420cd1b09347905952248a95496,
         type: 3}
@@ -45159,31 +45189,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas_Updated
       objectReference: {fileID: 0}
-    - target: {fileID: 5100266337923391844, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
-        type: 3}
-      propertyPath: m_FontData.m_HorizontalOverflow
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5100266337923391844, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
-        type: 3}
-      propertyPath: m_FontData.m_Alignment
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2811260740926278838, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1600
-      objectReference: {fileID: 0}
-    - target: {fileID: 2811260740926278838, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2811260740926278838, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -102
-      objectReference: {fileID: 0}
     - target: {fileID: 5614493209749286606, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45288,6 +45293,40 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5100266337923391844, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
+        type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5100266337923391844, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5100266337923391844, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
+        type: 3}
+      propertyPath: m_Text
+      value: "Wild salmon are swimming upstream to spawn! It\u2019s a long, difficult
+        journey for salmon to go from the ocean to their spawning grounds in the headwaters
+        of the river. Figure out what affects their survival and watch them evolve
+        over generations in response to changes in their environment. Help the population
+        thrive. Don\u2019t let them go extinct!\n\n\n\nVersion A90-2-1d150_R30-0-0_D20L907020_C-1500-900_6500_800"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811260740926278838, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1600
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811260740926278838, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811260740926278838, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -102
       objectReference: {fileID: 0}
     - target: {fileID: 5614493208596940669, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
         type: 3}
@@ -45663,6 +45702,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5614493208645248172, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
+        type: 3}
+      propertyPath: m_Name
+      value: ViewControls
       objectReference: {fileID: 0}
     - target: {fileID: 5576033778275851467, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
         type: 3}
@@ -46178,6 +46222,19 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 5614493208682226256, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
+        type: 3}
+      propertyPath: m_Text
+      value: 'View Controls:
+
+        W = move up
+
+        A = move left
+
+        S = move down
+
+        D = move right'
+      objectReference: {fileID: 0}
     - target: {fileID: 7339198027924067928, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
         type: 3}
       propertyPath: m_FontData.m_FontSize
@@ -46190,7 +46247,12 @@ PrefabInstance:
 
         Q = zoom out
 
-        E = zoom in'
+        E = zoom in
+
+
+        Version
+
+        A90-2-1d150_R30-0-0_D20L9070-5Cfull'
       objectReference: {fileID: 0}
     - target: {fileID: 7993774778931363191, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
         type: 3}
@@ -46252,10 +46314,25 @@ PrefabInstance:
       propertyPath: m_FontData.m_MinSize
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5287162937868506036, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
+    - target: {fileID: 5614493208682226258, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
         type: 3}
-      propertyPath: m_Text
-      value: 'Version: A404040d150_R40-0-0_D10L907010_C-1500-1000_7000_1000_2019_0523'
+      propertyPath: m_Name
+      value: LeftCol
+      objectReference: {fileID: 0}
+    - target: {fileID: 6228356825218930158, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
+        type: 3}
+      propertyPath: m_Name
+      value: RightCol
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648085094589448936, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866056390606164490, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75b4a9cd018f0ed44bf34999ba93aec8, type: 3}

@@ -1,0 +1,12 @@
+{
+"companyName": "DefaultCompany",
+"productName": "SalmonRunUnity",
+"dataUrl": "SalmonRunWebGL_A90-2-1d150_R30-0-0_D20L9070-5Cfull.data.unityweb",
+"wasmCodeUrl": "SalmonRunWebGL_A90-2-1d150_R30-0-0_D20L9070-5Cfull.wasm.code.unityweb",
+"wasmFrameworkUrl": "SalmonRunWebGL_A90-2-1d150_R30-0-0_D20L9070-5Cfull.wasm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}

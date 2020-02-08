@@ -124,6 +124,11 @@ public class PostRunStatsPanelController : PanelController
             offspringLargeText.text = largeDescriptor + divider + FishGenomeUtilities.FindLargeGenomes(offspringGenomes).Count.ToString();
             offspringFemaleText.text = femaleDescriptor + divider + FishGenomeUtilities.FindFemaleGenomes(offspringGenomes).Count.ToString();
             offspringMaleText.text = maleDescriptor + divider + FishGenomeUtilities.FindMaleGenomes(offspringGenomes).Count.ToString();
+
+            // example of data to go in data file structure
+            int tmp = FishGenomeUtilities.FindSmallGenomes(offspringGenomes).Count;
+
+
         }
     }
 

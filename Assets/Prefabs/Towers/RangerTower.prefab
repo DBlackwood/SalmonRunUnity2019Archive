@@ -2211,7 +2211,7 @@ MonoBehaviour:
     type: 3}
   slowdownEffectSmall: -0.01
   slowdownEffectMedium: -0.02
-  slowdownEffectLarge: -0.45
+  slowdownEffectLarge: -0.6
   regulationSuccessRate: 1
   numFlashesPerCatch: 3
 --- !u!114 &519896356753285646
