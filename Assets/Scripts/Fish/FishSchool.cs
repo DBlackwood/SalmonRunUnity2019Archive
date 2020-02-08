@@ -16,6 +16,8 @@ public class FishSchool : MonoBehaviour, IPausable {
     [Header("School Info")]
     // how big this school is
     public int initialNumFish;
+    // initialized in Unity - Assets -> _scenes -> MapV2 -> DemoLevel
+    // Hierarchy -> DemoLevel -> School
 
     // minimum and maximum number of children that a pair of salmon can generate during reproduction
     public int minOffspring;
