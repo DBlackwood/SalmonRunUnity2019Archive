@@ -5,7 +5,7 @@ using UnityEngine;
 /**
  * Handles fish evolution over generations
  */
-public class        EvolutionManager : MonoBehaviour
+public class EvolutionManager : MonoBehaviour
 {
     // singleton instance
     public static EvolutionManager Instance { get; private set; }

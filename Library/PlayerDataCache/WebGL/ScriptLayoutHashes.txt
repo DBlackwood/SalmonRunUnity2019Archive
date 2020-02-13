@@ -1,6 +1,6 @@
 WebGL
 PlayerPath?
-/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRun2019_0524_from03/Builds/WebGL/A90-2-1d100_R30-0-0_D10L907010_C-1500-900_9000_800_d2019_0524after
+/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRun2019_0503/Builds/testBuildWebGL
 SceneListBegin?
 Assets/_Scenes/MapV2/DemoLevel.unity
 SceneListEnd?
@@ -193,7 +193,6 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 a4f0a4f62100f1a4fb5cbe0e00dde83f Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 a673700aeafee2f5ce820bbcb6991f59 Assembly-CSharp.dll:.SpawningGrounds
 0b3670ba2d08b62960aced1d8cbf5bbb Assembly-CSharp.dll:.FishSchoolCollider
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Text2
 5fc094978ce3e3591a7500ed380d854a Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton
 2b84b5b5c774c8c035cde6e7c1c2bbec Assembly-CSharp.dll:.TimeManager
 afc5b93a7b192de2dcb3832fe35a5c7e Assembly-CSharp.dll:Assets.MobileOptimizedWater.Scripts.CameraRotator

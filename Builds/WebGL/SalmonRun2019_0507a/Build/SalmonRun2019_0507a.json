@@ -1,0 +1,12 @@
+{
+"companyName": "DefaultCompany",
+"productName": "SalmonRunUnity",
+"dataUrl": "SalmonRun2019_0507a.data.unityweb",
+"wasmCodeUrl": "SalmonRun2019_0507a.wasm.code.unityweb",
+"wasmFrameworkUrl": "SalmonRun2019_0507a.wasm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
