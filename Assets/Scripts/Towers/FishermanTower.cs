@@ -28,9 +28,9 @@ public class FishermanTower : TowerBase
     public int numFlashesPerCatch;
 
     // default rate of success of fish catch attempt for small, medium and large fish
-    public float defaultSmallCatchRate = 0.01F;
-    public float defaultMediumCatchRate = 0.02F;
-    public float defaultLargeCatchRate = 0.90F;
+    public float defaultSmallCatchRate;
+    public float defaultMediumCatchRate;  // = 0.02F  Need F at end because it is a float
+    public float defaultLargeCatchRate;
 
     // current rate of success of fish catch attempt for small, medium, and large fish
     private float currentSmallCatchRate;
