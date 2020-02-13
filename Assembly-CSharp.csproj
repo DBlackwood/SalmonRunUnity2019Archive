@@ -368,17 +368,17 @@
     <Reference Include="UnityEngine.Advertisements.Editor">
       <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRunUnity/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRunUnity/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRunUnity/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.StandardEvents">
+      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRunUnity/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRunUnity/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRunUnity/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>/Users/dianeblackwood/_dev/SalmonRunStuff/UnityProjects/SalmonRunUnity/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>/Applications/Unity/Hub/Editor/2018.3.14f1/Unity.app/Contents/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

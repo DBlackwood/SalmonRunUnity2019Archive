@@ -1,0 +1,12 @@
+{
+"companyName": "DefaultCompany",
+"productName": "SalmonRunUnity",
+"dataUrl": "A404040d150_R40-0-0_D05L9070-5_C-1500-1000_7000_1000_2019_0523.data.unityweb",
+"wasmCodeUrl": "A404040d150_R40-0-0_D05L9070-5_C-1500-1000_7000_1000_2019_0523.wasm.code.unityweb",
+"wasmFrameworkUrl": "A404040d150_R40-0-0_D05L9070-5_C-1500-1000_7000_1000_2019_0523.wasm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}

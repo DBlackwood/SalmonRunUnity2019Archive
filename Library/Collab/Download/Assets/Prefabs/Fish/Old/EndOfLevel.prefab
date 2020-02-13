@@ -57,4 +57,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caef61ebe0c130f4b92d6559febe754b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numNestingSights: 100
+  numNestingSights: 150

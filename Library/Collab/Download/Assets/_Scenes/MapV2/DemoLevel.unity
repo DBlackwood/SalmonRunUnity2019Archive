@@ -44946,6 +44946,11 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 1655871378}
+    - target: {fileID: 2321721658432575645, guid: a5e01420cd1b09347905952248a95496,
+        type: 3}
+      propertyPath: initialNumFish
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 2321721658432575646, guid: a5e01420cd1b09347905952248a95496,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45149,6 +45154,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5100266337923391844, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
+        type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5100266337923391844, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811260740926278838, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1600
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811260740926278838, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811260740926278838, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -102
+      objectReference: {fileID: 0}
     - target: {fileID: 5614493209749286594, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
         type: 3}
       propertyPath: m_Name
@@ -46152,6 +46182,18 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339198027924067928, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
+        type: 3}
+      propertyPath: m_Text
+      value: '
+
+        Q = zoom out
+
+        E = zoom in
+
+
+        v2019_0521'
       objectReference: {fileID: 0}
     - target: {fileID: 7993774778931363191, guid: 75b4a9cd018f0ed44bf34999ba93aec8,
         type: 3}
