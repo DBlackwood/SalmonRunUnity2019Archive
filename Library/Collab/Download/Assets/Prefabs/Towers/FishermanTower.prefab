@@ -158,7 +158,7 @@ MonoBehaviour:
   hitLineMaterial: {fileID: 2100000, guid: babc363db094c014497dd0ee086de570, type: 2}
   missLineMaterial: {fileID: 2100000, guid: b26876ed0e685894a9b964eb35acb642, type: 2}
   flashMaterial: {fileID: 2100000, guid: 15a1b3c7cd9cfcf4abef70e065f15150, type: 2}
-  defaultCatchRate: 1
+  defaultCatchRate: 0.4
   numFlashesPerCatch: 3
 --- !u!114 &1090831969527300733
 MonoBehaviour:
