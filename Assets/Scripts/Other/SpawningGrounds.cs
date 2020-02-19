@@ -7,7 +7,7 @@ public class SpawningGrounds : MonoBehaviour
     // how many fish this spawning grounds has the capacity for
     public int numNestingSights;
     // initialized in Assets -> Prefabs -> Art -> Fish -> Old -> EndOfLevel
-    // wonder what would happen if I initialized it here to something else?
+    // if you don't want to initialize in Unity, make it private
 
     // how many males and females have been taken in
     private int males;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Use this as a template to figure out how to make a verison screen. 
 
 public class PostRunStatsPanelController : PanelController
 {

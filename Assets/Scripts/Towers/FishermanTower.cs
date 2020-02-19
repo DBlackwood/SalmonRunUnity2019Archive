@@ -19,9 +19,18 @@ public class FishermanTower : TowerBase
     // default rate of success of a fish catch attempt
     [Range(0f, 1f)]
     public float defaultCatchRate;
+    // initalized in Unity interface:
+    //Project -> Assets -> Prefabs -> Towers -> FishermanTower
+    // then look at Hierarchy
+    //Hierarchy -> FishermanTower -> TokenBase
 
     // how many times the fish will flash in and out to show it is being caught
     public int numFlashesPerCatch;
+
+    // default rate of success of fish catch attempt for small, medium and large fish
+    public float defaultSmallCatchRate = 0.01F;
+    public float defaultMediumCatchRate = 0.02F;
+    public float defaultLargeCatchRate = 0.90F;
 
     // current rate of success of fish catch attempt for small, medium, and large fish
     private float currentSmallCatchRate;
@@ -46,9 +55,9 @@ public class FishermanTower : TowerBase
         base.Awake();
 
         // set current catch rates
-        currentSmallCatchRate = defaultCatchRate;
-        currentMediumCatchRate = defaultCatchRate;
-        currentLargeCatchRate = defaultCatchRate;
+        currentSmallCatchRate = defaultCatchRate * defaultSmallCatchRate;
+        currentMediumCatchRate = defaultCatchRate * defaultMediumCatchRate;
+        currentLargeCatchRate = defaultCatchRate * defaultLargeCatchRate;
     }
 
     /**

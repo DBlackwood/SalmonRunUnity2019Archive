@@ -42,6 +42,10 @@ public class RangerTower : TowerBase
     // float representing how likely the ranger is to successfully regulate an angler
     [Range(0f, 1f)]
     public float regulationSuccessRate;
+    // initialized in Unity
+    // Project -> Assets -> Prefabs -> Towers -> RangerTower
+    //   then look at Hierarchy
+    // Hierarchy -> RangerTower -> TokenBase
 
     // how many times the fish will flash in and out to show it is being caught
     public int numFlashesPerCatch;

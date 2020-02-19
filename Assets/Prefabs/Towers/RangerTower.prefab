@@ -2209,9 +2209,9 @@ MonoBehaviour:
   flashMaterial: {fileID: 2100000, guid: 15a1b3c7cd9cfcf4abef70e065f15150, type: 2}
   lineRendererPrefab: {fileID: 5809081453534374998, guid: 3e15e3a67a4137545b1b79ab4d3a401e,
     type: 3}
-  slowdownEffectSmall: -0.4
-  slowdownEffectMedium: -0.4
-  slowdownEffectLarge: 0
+  slowdownEffectSmall: -0.01
+  slowdownEffectMedium: -0.02
+  slowdownEffectLarge: -0.45
   regulationSuccessRate: 1
   numFlashesPerCatch: 3
 --- !u!114 &519896356753285646
